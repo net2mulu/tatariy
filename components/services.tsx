@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+// import { ArrowRight } from "lucide-react";
+// import Link from "next/link";
 
 const services = [
   {
@@ -40,8 +40,8 @@ const ServiceCard = ({
   title,
   description,
   image,
-  slug,
-}: {
+}: // slug,
+{
   title: string;
   description: string;
   image: string;
@@ -70,13 +70,13 @@ const ServiceCard = ({
       <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
         {description}
       </p>
-      <Link
+      {/* <Link
         href={`/services/${slug}`}
         className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
       >
         Learn More
         <ArrowRight className="ml-2 h-4 w-4" />
-      </Link>
+      </Link> */}
     </div>
   </motion.div>
 );
