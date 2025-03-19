@@ -62,14 +62,14 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div
-        className="relative z-20 container mx-auto px-4 py-20 max-w-7xl"
+        className="relative z-20 container mx-auto px-4  py-8 sm:py-20 max-w-7xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
-            className="mb-6"
+            className="sm:mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -92,7 +92,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-justify text-gray-600 dark:text-gray-300 mb-10 mx-auto leading-relaxed"
+            className="text-xs sm:text-lg md:text-xl text-justify text-gray-600 dark:text-gray-300 mb-10 mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -129,7 +129,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Trust indicators */}
-      <div className="absolute bottom-8 left-0 right-0 z-20">
+      <div className="absolute bottom-2 md:bottom-8 left-0 right-0 z-20">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center">
             {[
