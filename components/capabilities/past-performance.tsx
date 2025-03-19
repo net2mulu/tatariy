@@ -32,7 +32,7 @@ const performances = [
 
 const clients = [
   { name: "Department of Defense", logo: "/logo/dod.png" },
-  { name: "Department of State", logo: "/logo/dos.jpg" },
+  { name: "Department of State", logo: "/logo/dos.png" },
   { name: "Federal Aviation Administration", logo: "/logo/faa.svg" },
   { name: "Department of Veterans Affairs", logo: "/logo/dva.svg" },
 ];

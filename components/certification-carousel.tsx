@@ -10,8 +10,8 @@ const certifications = [
   { id: 3, path: "/cirtificates/SWAM_LOGO.jpg", alt: "EDWOSB Certification" },
   { id: 4, path: "/cirtificates/MWAA.jpg", alt: "DBE Certification" },
   { id: 5, path: "/cirtificates/DBE.png", alt: "WBE Certification" },
-  { id: 6, path: "/cirtificates/MWBE.jpg", alt: "SBE Certification" },
-  { id: 7, path: "/cirtificates/SBE-Logo.jpg", alt: "MBE Certification" },
+  { id: 6, path: "/cirtificates/MWBE.png", alt: "SBE Certification" },
+  { id: 7, path: "/cirtificates/SBE-Logo.png", alt: "MBE Certification" },
   { id: 8, path: "/cirtificates/MBE.png", alt: "LDBE Certification" },
 ];
 
