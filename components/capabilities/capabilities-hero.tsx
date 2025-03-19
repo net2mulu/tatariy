@@ -36,8 +36,7 @@ export default function CapabilitiesHero() {
           className="max-w-3xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Experience You Trust,
-            <span className="block text-red-500">Expertise You Need.</span>
+            What we <span className=" text-red-500">do?</span>
           </h1>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
             TATARIY is your premier Small Disadvantaged and Minority Women-Owned
@@ -46,8 +45,8 @@ export default function CapabilitiesHero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-red-600 rounded-full p-4 hover:bg-red-700 text-white">
-              <Link href="/capabilities-statement.pdf">
-                Download Our Capability Statement
+              <Link href="/statement.pdf" target="_blank">
+                Download Now
               </Link>
             </button>
           </div>

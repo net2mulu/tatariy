@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import ParticlesComponent from "./particles";
 
 export default function Hero() {
@@ -16,28 +17,41 @@ export default function Hero() {
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/50 dark:bg-blue-500/40 rounded-full filter blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/40 dark:bg-blue-500/30 rounded-full filter blur-3xl"
           animate={{
-            scale: [1, 1.1, 1],
+            scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
-            repeat: Infinity,
-            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            duration: 10,
             ease: "easeInOut",
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/50 dark:bg-red-500/40 rounded-full filter blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/40 dark:bg-red-500/30 rounded-full filter blur-3xl"
           animate={{
-            scale: [1, 1.1, 1],
+            scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
-            repeat: Infinity,
+            repeat: Number.POSITIVE_INFINITY,
+            duration: 10,
+            ease: "easeInOut",
+            delay: 5,
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/3 w-72 h-72 bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            repeat: Number.POSITIVE_INFINITY,
             duration: 8,
             ease: "easeInOut",
-            delay: 4,
+            delay: 2,
           }}
         />
         {/* Particles container */}
@@ -60,13 +74,13 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 rounded-full border border-blue-600/30 dark:border-blue-400/30 mb-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+            <span className="inline-block px-4 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 rounded-full border border-blue-600/30 dark:border-blue-400/30 mb-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm">
               Government Technology Solutions
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -78,13 +92,17 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
+            className="text-base sm:text-lg md:text-xl text-justify text-gray-600 dark:text-gray-300 mb-10 mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Empowering government agencies with cutting-edge technology
-            solutions and proven expertise in digital transformation.
+            TATARIY LLC is your trusted partner in government contracting,
+            delivering excellence to every mission. We streamline IT, Program
+            Management, Talent Acquisition, and Training, empowering agencies to
+            excel in an AI-driven world with a people-first approach. Our track
+            record of cost savings, uplifted teams, and uncompromised integrity
+            speaks for itself.
           </motion.p>
 
           <motion.div
@@ -94,17 +112,18 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Link
-              href="/capabilities"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/30 dark:hover:shadow-red-500/30"
+              href="/about"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Explore Capabilities
+              Learn more
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link
+            {/* <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-blue-600 dark:text-blue-400 border-2 border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:bg-blue-50 dark:hover:bg-blue-900/10 rounded-lg transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-gray-800 dark:text-white border-2 border-gray-800/20 dark:border-white/20 hover:border-gray-800/40 dark:hover:border-white/40 hover:bg-gray-800/5 dark:hover:bg-white/5 rounded-lg transition-all duration-300"
             >
               Get in Touch
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
       </motion.div>
@@ -121,14 +140,19 @@ export default function Hero() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="text-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                className="text-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-white/50 dark:border-gray-700/50"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                }}
               >
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text mb-1">
                   {item.number}
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+                <div className="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300">
                   {item.text}
                 </div>
               </motion.div>
