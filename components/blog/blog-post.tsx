@@ -5,25 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Share2, Twitter, Facebook, Linkedin } from "lucide-react";
 
-type ContentBlock = {
-  type: "paragraph" | "heading" | "image" | "quote";
-  text?: string;
-  level?: number;
-  src?: string;
-  alt?: string;
-};
+interface Post {
+  title: string;
+  date: string;
+  author: string;
+  image?: string;
+  content: { type: string; text: string }[];
+}
 
-type BlogPostProps = {
-  post: {
-    title: string;
-    date: string;
-    author: string;
-    image: string;
-    content: ContentBlock[];
-  };
-};
-
-export function BlogPost({ post }: BlogPostProps) {
+export function BlogPost({ post }: { post: Post }) {
   return (
     <article className="min-h-screen">
       {/* Hero Section */}
