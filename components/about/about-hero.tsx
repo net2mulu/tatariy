@@ -38,26 +38,37 @@ export default function AboutHero() {
         >
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p>
-              With a combined 15+ years of leadership experience serving major
-              federal agencies, we have positioned ourselves to offer a unique
-              blend of expertise, including Information Technology, Program
-              Management, Professional Services, Talent Acquisition, and
-              Training services.
+              TATARIY LLC, headquartered in Lake Ridge, Virginia, is a
+              government contracting firm built on a singular principle: TATARIY
+              means DOER, and we are one. We deliver efficient, innovative
+              solutions in Information Technology (IT), Program Management,
+              Talent Acquisition, and Training, empowering state and federal
+              agencies to thrive in today’s AI-driven world. Our people-centered
+              approach ensures government operations are streamlined, costs are
+              reduced, and results are transformative.
             </p>
             <p>
-              Our leadership team is equipped with an array of educational
-              backgrounds and certifications, including MBA, PM, ITS, VA, and
-              CSM, ensuring that we are not only well-versed in industry best
-              practices but also at the forefront of emerging trends and
-              technologies.
-            </p>
+              We tackle challenges head-on with IT solutions that optimize
+              workflows through custom software, system integration, and
+              technical support. Our Program Management delivers projects with
+              precision, ensuring measurable success from start to finish.
+              Talent Acquisition connects agencies with top professionals in AI,
+              cybersecurity, and advanced IT roles, recognizing potential and
+              building teams that excel. Our Training programs foster
+              collaboration and adaptability, equipping workforces for the
+              future.
+            </p>{" "}
             <p>
-              What sets us apart is not just our expertise, but also our
-              extensive network of connections across various government
-              agencies and positions. This network gives us unparalleled access
-              to vital resources and enables us to ensure the seamless and
-              quality execution of operations, no matter the scale or
-              complexity.
+              At TATARIY, efficiency is our hallmark. Our commitment is simple:
+              delivering results that speak for themselves. For our clients,
+              this means achieving measurable success and building trust. For
+              our partners, we ensure excellence that makes them stand out and
+              grow organically. In the end, we want those we serve to walk away
+              saying, “TATARIY brings the experience I trust and the expertise I
+              need.” We engage stakeholders with alignment, develop teams
+              through tailored mentoring, manage change with empathy, and get
+              the job done with integrity—because at TATARIY, we don’t just
+              promise, we do.
             </p>
           </div>
         </motion.div>

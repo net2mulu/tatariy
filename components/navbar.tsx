@@ -240,6 +240,7 @@ export default function Navbar() {
   const mobileButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    console.log(isMobile);
     setMounted(true);
     const handleResize = () => setIsMobile(window.innerWidth < 640);
     window.addEventListener("resize", handleResize);
