@@ -34,10 +34,10 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto"
+          className="mt-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 max-w-9xl mx-auto"
         >
-          <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p>
+          <div className="prose prose-lg dark:prose-invert max-w-none space-y-4">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               TATARIY LLC, headquartered in Lake Ridge, Virginia, is a
               government contracting firm built on a singular principle: TATARIY
               means DOER, and we are one. We deliver efficient, innovative
@@ -47,7 +47,7 @@ export default function AboutHero() {
               approach ensures government operations are streamlined, costs are
               reduced, and results are transformative.
             </p>
-            <p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               We tackle challenges head-on with IT solutions that optimize
               workflows through custom software, system integration, and
               technical support. Our Program Management delivers projects with
@@ -58,7 +58,7 @@ export default function AboutHero() {
               collaboration and adaptability, equipping workforces for the
               future.
             </p>{" "}
-            <p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               At TATARIY, efficiency is our hallmark. Our commitment is simple:
               delivering results that speak for themselves. For our clients,
               this means achieving measurable success and building trust. For

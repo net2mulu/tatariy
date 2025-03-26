@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from "framer-motion";
-import { Sun, Moon, Menu, X, ChevronDown } from "lucide-react";
+import { Sun, Moon, Menu, X, ChevronDown, Calendar } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -86,6 +86,11 @@ const navigationItems = [
     id: "careers",
     title: "Careers",
     href: "/careers",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+    href: "/contact",
   },
 ];
 
@@ -311,6 +316,14 @@ export default function Navbar() {
             {navigationItems.map((item) => (
               <NavLink key={item.id} item={item} />
             ))}
+
+            <Link
+              href="/contact#calendly"
+              className="ml-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
+            >
+              <Calendar className="h-4 w-4 mr-2" />
+              Book a Call
+            </Link>
 
             {/* Desktop Theme Toggle */}
             <button

@@ -11,6 +11,7 @@ import {
   Info,
 } from "lucide-react";
 import FederalExperienceParticles from "./federal-experience-particles";
+import { useMobileDetector } from "@/hooks/use-mobile-detector";
 
 const agencies = [
   "DEPARTMENT OF DEFENSE - US-ARMY & US-Air Force",
@@ -90,6 +91,7 @@ const features = [
 ];
 
 export default function FederalExperience() {
+  const isMobile = useMobileDetector();
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   return (
@@ -199,10 +201,18 @@ export default function FederalExperience() {
 
                     {/* Tooltip */}
                     {activeTooltip === item.code && (
-                      <div className="absolute z-20 left-1/2 transform -translate-x-1/2 -top-1 -translate-y-full mt-0 w-auto min-w-max">
-                        <div className="relative px-3 py-2 text-xs font-medium text-white bg-black/90 rounded-md shadow-lg backdrop-blur-sm">
+                      <div
+                        className={`absolute z-20 ${
+                          isMobile
+                            ? "top-full text-pretty left-0 right-0 mt-1"
+                            : "left-1/2 transform -translate-x-1/2 -top-1 -translate-y-full"
+                        } w-auto `}
+                      >
+                        <div className="relative px-3 py-2 h-[80px] md:h-auto text-xs font-medium text-white bg-black/90 rounded-md shadow-lg backdrop-blur-sm">
                           {item.description}
-                          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-black/90"></div>
+                          {!isMobile && (
+                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-black/90"></div>
+                          )}
                         </div>
                       </div>
                     )}

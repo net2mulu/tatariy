@@ -7,14 +7,14 @@ export default function AboutMissionVision() {
   return (
     <section className="py-24 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 max-w-9xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
           {/* Vision */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
+            className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg h-full flex flex-col"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
@@ -24,9 +24,9 @@ export default function AboutMissionVision() {
                 Our Vision
               </h2>
             </div>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">
               To be the premier Women-Owned Government Contracting company. We
-              want to become the government first choice for mission solutions
+              want to become the governments first choice for mission solutions
               by serving to greater heights. We want to create a work-space
               where employees are known to thrive.
             </p>
@@ -38,7 +38,7 @@ export default function AboutMissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
+            className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg h-full flex flex-col"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-lg">
@@ -48,12 +48,15 @@ export default function AboutMissionVision() {
                 Our Mission
               </h2>
             </div>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              To foster an environment for our clients and employees where
-              integrity, excellence and empowerment are paramount. We strive to
-              deliver exceptional solutions while maintaining the highest
-              standards of professionalism and ethical conduct.
-            </p>
+            <div className="flex flex-col flex-grow justify-between">
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                To foster an environment for our clients and employees where
+                integrity, excellence and empowerment are paramount.
+              </p>
+
+              {/* This empty div helps push content to the top while maintaining equal height */}
+              <div className="mt-auto"></div>
+            </div>
           </motion.div>
         </div>
       </div>
