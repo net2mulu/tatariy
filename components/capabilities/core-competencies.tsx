@@ -45,7 +45,7 @@ const competencies = [
 export default function CoreCompetencies() {
   return (
     <section className="py-24 bg-white dark:bg-gray-900 scroll-mt-16 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

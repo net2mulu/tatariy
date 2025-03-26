@@ -14,7 +14,7 @@ const blogPosts = [
     author: "TATARIY",
     excerpt:
       "At TATARIY, we've seen it too often in government contracting: businesses—especially emerging ones like us—stall out, overanalyzing bids, fearing rejection, or waiting for the \"perfect\" solicitation. We're here to flip that.",
-    image: "/rahwa2.jpg",
+    image: "/dyna.png",
   },
   // More blog posts can be added here in the future
 ];
@@ -22,7 +22,7 @@ const blogPosts = [
 export function BlogList() {
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-9xl">
         <div className="grid gap-12">
           {blogPosts.map((post, index) => (
             <motion.article
@@ -33,7 +33,7 @@ export function BlogList() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-              <div className="relative h-72 md:h-full rounded-lg overflow-hidden">
+              <div className="relative h-96 md:h-full rounded-lg overflow-hidden">
                 <Image
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}

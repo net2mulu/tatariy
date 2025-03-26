@@ -11,7 +11,7 @@ import Newsletter from "./newsletter";
 export default function Footer() {
   return (
     <footer className="bg-gray-100 dark:bg-gray-800 py-12">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-9xl">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <Link href="/" className="inline-block">

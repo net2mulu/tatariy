@@ -30,7 +30,7 @@ export default function ServiceLayout({
     <main className="pt-20 bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 max-w-9xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center relative">
             {/* Decorative elements */}
             <div className="absolute inset-0">
@@ -68,7 +68,7 @@ export default function ServiceLayout({
 
       {/* Case Study Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 max-w-9xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

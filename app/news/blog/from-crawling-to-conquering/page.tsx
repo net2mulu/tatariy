@@ -7,7 +7,7 @@ export default function FromCrawlingToConqueringPage() {
       "From Crawling to Conquering: Why Starting Beats Overthinking in Government Contracting",
     date: "March 06, 2025",
     author: "TATARIY",
-    image: "/rahwa.jpg",
+    image: "/dyna.png",
     content: [
       {
         type: "paragraph",

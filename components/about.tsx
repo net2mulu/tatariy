@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export default function About() {
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-red-50 dark:from-gray-900 dark:via-blue-900/10 dark:to-red-900/10">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,13 +57,11 @@ export default function About() {
                 Experience & Expertise
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                With a combined 30 years of leadership experience serving major
+                With a combined 15+ years of leadership experience serving major
                 federal agencies, we have positioned ourselves to offer a unique
                 blend of expertise, including Information Technology, Program
                 Management, Professional Services, Talent Acquisition, and
-                Training services. Our team has been cleared up to TS/SCI,
-                reflecting our commitment to upholding the highest standards of
-                security and trustworthiness in our operations.
+                Training services.
               </p>
             </div>
 

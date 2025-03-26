@@ -28,7 +28,7 @@ export default function CapabilitiesHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 max-w-7xl">
+      <div className="relative z-10 container mx-auto px-4 py-20 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

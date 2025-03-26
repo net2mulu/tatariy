@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Globe2, Shield, Users } from "lucide-react";
+import { Building2, Globe2, Users } from "lucide-react";
 
 const companyInfo = [
   {
@@ -25,12 +25,12 @@ const highlights = [
     description:
       "Diverse qualifications including MBA, PMI, ITIL-V4, CSM, ensuring comprehensive expertise.",
   },
-  {
-    icon: Shield,
-    title: "Security Cleared",
-    description:
-      "Industry veterans cleared up to TS/SCI with 30 years of combined experience.",
-  },
+  // {
+  //   icon: Shield,
+  //   title: "Security Cleared",
+  //   description:
+  //     "Industry veterans cleared up to TS/SCI with 30 years of combined experience.",
+  // },
   {
     icon: Globe2,
     title: "Well Connected",
@@ -51,7 +51,7 @@ export default function CompanyProfile() {
       id="company-profile"
       className="py-24 bg-gray-50 dark:bg-gray-800 scroll-mt-16"
     >
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

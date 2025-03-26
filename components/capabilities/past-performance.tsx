@@ -32,7 +32,7 @@ const performances = [
 
 const clients = [
   { name: "Department of Defense", logo: "/logo/dod.png" },
-  { name: "Department of State", logo: "/logo/dos.png" },
+  // { name: "Department of State", logo: "/logo/dos.png" },
   { name: "Federal Aviation Administration", logo: "/logo/faa.svg" },
   { name: "Department of Veterans Affairs", logo: "/logo/dva.svg" },
 ];
@@ -64,7 +64,7 @@ export default function PastPerformance() {
 
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 scroll-mt-16">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

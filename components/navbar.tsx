@@ -3,9 +3,15 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+} from "framer-motion";
 import { Sun, Moon, Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // Navigation data structure
 const navigationItems = [
@@ -99,6 +105,8 @@ type NavItem = {
 const NavLink = ({ item }: { item: NavItem }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const isCapabilitiesRoute = pathname === "/capabilities";
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -121,7 +129,11 @@ const NavLink = ({ item }: { item: NavItem }) => {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors flex items-center"
+          className={`flex items-center ${
+            isCapabilitiesRoute
+              ? "text-white hover:text-gray-200"
+              : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+          } transition-colors`}
         >
           {item.title}
           <ChevronDown
@@ -163,7 +175,11 @@ const NavLink = ({ item }: { item: NavItem }) => {
   return (
     <Link
       href={item.href}
-      className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+      className={`${
+        isCapabilitiesRoute
+          ? "text-white hover:text-gray-200"
+          : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+      } transition-colors`}
     >
       {item.title}
     </Link>
@@ -172,12 +188,18 @@ const NavLink = ({ item }: { item: NavItem }) => {
 
 const MobileDropdown = ({ item }: { item: NavItem }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isCapabilitiesRoute = pathname === "/capabilities";
 
   return (
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+        className={`flex items-center justify-between w-full ${
+          isCapabilitiesRoute
+            ? "text-white hover:text-gray-200"
+            : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+        }`}
       >
         <span>{item.title}</span>
         <ChevronDown
@@ -192,7 +214,11 @@ const MobileDropdown = ({ item }: { item: NavItem }) => {
             <Link
               key={subItem.href}
               href={subItem.href}
-              className="block py-2 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              className={`block py-2 text-sm ${
+                isCapabilitiesRoute
+                  ? "text-white hover:text-gray-200"
+                  : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              }`}
             >
               {subItem.title}
             </Link>
@@ -210,15 +236,35 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    console.log(isMobile);
     setMounted(true);
     const handleResize = () => setIsMobile(window.innerWidth < 640);
     window.addEventListener("resize", handleResize);
     handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+
+    // Handle clicks outside the mobile menu
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        mobileButtonRef.current &&
+        !mobileButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
@@ -241,7 +287,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
@@ -286,9 +332,12 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center">
             <button
+              ref={mobileButtonRef}
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              aria-expanded={isOpen}
             >
+              <span className="sr-only">Open main menu</span>
               {isOpen ? (
                 <X className="h-6 w-6" />
               ) : (
@@ -300,52 +349,56 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <motion.div
-          className="lg:hidden"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
-            {navigationItems.map((item) => (
-              <div key={item.id} className="px-4 py-2">
-                {!item.dropdown ? (
-                  <Link
-                    href={item.href}
-                    className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <MobileDropdown item={item} />
-                )}
-              </div>
-            ))}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            ref={mobileMenuRef}
+            className="lg:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
+              {navigationItems.map((item) => (
+                <div key={item.id} className="px-4 py-2">
+                  {!item.dropdown ? (
+                    <Link
+                      href={item.href}
+                      className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <MobileDropdown item={item} />
+                  )}
+                </div>
+              ))}
 
-            {/* Mobile Theme Toggle */}
-            <div className="px-4 py-2">
-              <button
-                onClick={toggleTheme}
-                className="flex items-center w-full p-2 rounded-md text-gray-800 dark:text-gray-200"
-              >
-                {resolvedTheme === "dark" ? (
-                  <>
-                    <Sun className="h-5 w-5 mr-2" />
-                    <span>Light Mode</span>
-                  </>
-                ) : (
-                  <>
-                    <Moon className="h-5 w-5 mr-2" />
-                    <span>Dark Mode</span>
-                  </>
-                )}
-              </button>
+              {/* Mobile Theme Toggle */}
+              <div className="px-4 py-2">
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center w-full p-2 rounded-md text-gray-800 dark:text-gray-200"
+                >
+                  {resolvedTheme === "dark" ? (
+                    <>
+                      <Sun className="h-5 w-5 mr-2" />
+                      <span>Light Mode</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="h-5 w-5 mr-2" />
+                      <span>Dark Mode</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

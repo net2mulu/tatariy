@@ -13,7 +13,7 @@ export default function AboutHero() {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-red-500/20 rounded-full filter blur-3xl" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 max-w-7xl">
+      <div className="container relative z-10 mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function AboutHero() {
         >
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p>
-              With a combined 30 years of leadership experience serving major
+              With a combined 15+ years of leadership experience serving major
               federal agencies, we have positioned ourselves to offer a unique
               blend of expertise, including Information Technology, Program
               Management, Professional Services, Talent Acquisition, and
