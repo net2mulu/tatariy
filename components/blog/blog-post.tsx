@@ -45,7 +45,7 @@ export function BlogPost({ post }: { post: Post }) {
       </section>
 
       {/* Featured Image */}
-      <div className="relative h-[400px] md:h-[900px] w-[50vw] mx-auto">
+      <div className="relative h-[400px] md:h-[350px] bg-white dark:bg-gray-900 md:w-[50vw] mx-auto">
         <Image
           src={post.image || "/placeholder.svg"}
           alt={post.title}

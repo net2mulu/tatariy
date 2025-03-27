@@ -191,7 +191,13 @@ const NavLink = ({ item }: { item: NavItem }) => {
   );
 };
 
-const MobileDropdown = ({ item }: { item: NavItem }) => {
+const MobileDropdown = ({
+  item,
+  onItemClick,
+}: {
+  item: NavItem;
+  onItemClick?: () => void;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isCapabilitiesRoute = pathname === "/capabilities";
@@ -224,6 +230,7 @@ const MobileDropdown = ({ item }: { item: NavItem }) => {
                   ? "text-white hover:text-gray-200"
                   : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
               }`}
+              onClick={onItemClick}
             >
               {subItem.title}
             </Link>
@@ -279,6 +286,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleTheme = () =>
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  const closeMobileMenu = () => setIsOpen(false);
 
   if (!mounted) return null;
 
@@ -293,7 +301,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="container max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
@@ -380,15 +388,27 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-                      onClick={() => setIsOpen(false)}
+                      onClick={closeMobileMenu}
                     >
                       {item.title}
                     </Link>
                   ) : (
-                    <MobileDropdown item={item} />
+                    <MobileDropdown item={item} onItemClick={closeMobileMenu} />
                   )}
                 </div>
               ))}
+
+              {/* Book a Call button for mobile */}
+              <div className="px-4 py-2">
+                <Link
+                  href="/contact#calendly"
+                  onClick={closeMobileMenu}
+                  className="flex items-center w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span>Book a Call</span>
+                </Link>
+              </div>
 
               {/* Mobile Theme Toggle */}
               <div className="px-4 py-2">

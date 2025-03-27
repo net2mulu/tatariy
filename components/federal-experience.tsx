@@ -208,10 +208,10 @@ export default function FederalExperience() {
                             : "left-1/2 transform -translate-x-1/2 -top-1 -translate-y-full"
                         } w-auto `}
                       >
-                        <div className="relative px-3 py-2 h-[80px] md:h-auto text-xs font-medium text-white bg-black/90 rounded-md shadow-lg backdrop-blur-sm">
+                        <div className="relative px-3 py-2 h-[80px] md:h-auto text-xs font-medium text-white bg-black/50 rounded-md shadow-lg backdrop-blur-sm">
                           {item.description}
                           {!isMobile && (
-                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-black/90"></div>
+                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-black/30"></div>
                           )}
                         </div>
                       </div>

@@ -55,7 +55,7 @@ export default function Hero() {
           }}
         />
         {/* Particles container */}
-        <div className="absolute sm:inset-0">
+        <div className="absolute inset-0">
           <ParticlesComponent />
         </div>
       </div>
