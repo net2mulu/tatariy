@@ -1,18 +1,60 @@
 "use client";
 
+import type React from "react";
+
 import { useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ParticlesComponent from "./particles";
+import { useTypewriter } from "../hooks/use-typewriter";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const taglineRef = useRef<HTMLDivElement>(null);
+
+  // Mouse interaction values
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Transform mouse position to subtle rotation values (very limited range)
+  const rotateX = useTransform(mouseY, [-300, 300], [2, -2]);
+  const rotateY = useTransform(mouseX, [-300, 300], [-2, 2]);
+
+  // Handle mouse move
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (taglineRef.current) {
+      const rect = taglineRef.current.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left - rect.width / 2);
+      mouseY.set(e.clientY - rect.top - rect.height / 2);
+    }
+  };
+
+  // Reset rotation when mouse leaves
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
+  const TypewriterEffect = () => {
+    const [text] = useTypewriter({
+      words: [
+        "Expertise You Need.",
+        "Solutions That Work.",
+        "Innovation That Delivers.",
+        "Results That Matter.",
+      ],
+      loop: true,
+      delaySpeed: 2000,
+    });
+
+    return <>{text}</>;
+  };
 
   return (
     <div
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800"
+      className="relative min-h-screen flex flex-col items-center justify-start pt-44 gap-8 sm:pt-0 sm:justify-center sm:gap-0 overflow-hidden bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800"
     >
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -60,43 +102,71 @@ export default function Hero() {
         </div>
       </div>
 
+      <motion.div
+        className="sm:mb-6"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Link
+          href="/statement.pdf"
+          target="_blank"
+          className="inline-block px-6 text-base py-3 font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Government Technology Solutions
+        </Link>
+      </motion.div>
+
+      {/* tag line */}
+      <div
+        ref={taglineRef}
+        className="relative"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        <motion.h1
+          className="text-3xl md:text-6xl text-center flex flex-col md:flex-row font-bold text-gray-900 dark:text-white mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{
+            rotateX,
+            rotateY,
+            transformStyle: "preserve-3d",
+            perspective: "1000px",
+          }}
+        >
+          <motion.span
+            className="block bg-gradient-to-r from-red-600 to-blue-600 dark:from-red-400 dark:to-blue-400 text-transparent bg-clip-text mb-2 md:mb-0"
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.3 },
+            }}
+          >
+            Experience You Trust,
+          </motion.span>
+          <motion.span
+            className="block md:ml-2 bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text"
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.3 },
+            }}
+          >
+            <TypewriterEffect />
+          </motion.span>
+        </motion.h1>
+      </div>
+
       {/* Content */}
       <motion.div
-        className="relative z-20 container mx-auto px-4  py-4 sm:py-16 max-w-9xl lg:max-w-9xl"
+        className="relative z-20 container mx-auto py-4 sm:py-16 max-w-9xl lg:max-w-9xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            className="sm:mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Link
-              href="/statement.pdf"
-              target="_blank"
-              className="hover:bg-blue-600 hover:text-white cursor-pointer hover:scale-105 inline-block px-4 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 rounded-full border border-blue-600/30 dark:border-blue-400/30 mb-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm"
-            >
-              Government Technology Solutions
-            </Link>
-          </motion.div>
-
-          <motion.h1
-            className="text-xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-8 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <span className="block mb-2">Experience You Trust,</span>
-            <span className="block bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text">
-              Expertise You Need.
-            </span>
-          </motion.h1>
-
+        <div className="max-w-6xl mx-auto text-center px-4 sm:px-0">
           <motion.p
-            className="text-xs sm:text-lg md:text-xl text-balance text-gray-600 dark:text-gray-300 mb-10 mx-auto "
+            className="text-sm sm:text-lg md:text-xl text-justify text-gray-600 dark:text-gray-300 mb-10 mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}

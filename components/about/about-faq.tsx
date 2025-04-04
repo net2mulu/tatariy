@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import type React from "react";
+
+import { JSX, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
@@ -93,6 +95,88 @@ interface FAQItemProps {
   setOpenIndex: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
+// Function to format the answer text with proper bullet points
+const formatAnswer = (text: string) => {
+  // Split the text by newlines
+  const lines = text.split("\n");
+  const formattedContent: JSX.Element[] = [];
+  let currentParagraph: string[] = [];
+  let inBulletList = false;
+  let bulletItems: string[] = [];
+
+  lines.forEach((line, i) => {
+    // Check if this line is a bullet point
+    if (line.trim().startsWith("•")) {
+      // If we were building a paragraph, add it now
+      if (currentParagraph.length > 0) {
+        formattedContent.push(
+          <p key={`p-${i}`} className="mb-3">
+            {currentParagraph.join(" ")}
+          </p>
+        );
+        currentParagraph = [];
+      }
+
+      // Start or continue a bullet list
+      inBulletList = true;
+      bulletItems.push(line.trim().substring(1).trim()); // Remove the bullet and trim
+    } else {
+      // If we were in a bullet list, end it and add it to the content
+      if (inBulletList) {
+        formattedContent.push(
+          <ul key={`ul-${i}`} className="list-disc pl-5 mb-3 space-y-1">
+            {bulletItems.map((item, j) => (
+              <li key={j} className="text-gray-600 dark:text-gray-300">
+                {item}
+              </li>
+            ))}
+          </ul>
+        );
+        bulletItems = [];
+        inBulletList = false;
+      }
+
+      // Add to current paragraph or start a new one if line is empty
+      if (line.trim() === "") {
+        if (currentParagraph.length > 0) {
+          formattedContent.push(
+            <p key={`p-${i}`} className="mb-3">
+              {currentParagraph.join(" ")}
+            </p>
+          );
+          currentParagraph = [];
+        }
+      } else {
+        currentParagraph.push(line);
+      }
+    }
+  });
+
+  // Add any remaining paragraph
+  if (currentParagraph.length > 0) {
+    formattedContent.push(
+      <p key="final-p" className="mb-3">
+        {currentParagraph.join(" ")}
+      </p>
+    );
+  }
+
+  // Add any remaining bullet list
+  if (bulletItems.length > 0) {
+    formattedContent.push(
+      <ul key="final-ul" className="list-disc pl-5 mb-3 space-y-1">
+        {bulletItems.map((item, j) => (
+          <li key={j} className="text-gray-600 dark:text-gray-300">
+            {item}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  return formattedContent;
+};
+
 const FAQItem = ({ faq, index, openIndex, setOpenIndex }: FAQItemProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -124,7 +208,9 @@ const FAQItem = ({ faq, index, openIndex, setOpenIndex }: FAQItemProps) => (
           className="overflow-hidden"
         >
           <div className="p-6 bg-white dark:bg-gray-800 rounded-b-lg border-t border-gray-100 dark:border-gray-700">
-            <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
+            <div className="text-gray-600 dark:text-gray-300">
+              {formatAnswer(faq.answer)}
+            </div>
           </div>
         </motion.div>
       )}
@@ -140,7 +226,7 @@ export default function AboutFaq() {
   const rightColumnFaqs = faqs.slice(Math.ceil(faqs.length / 2));
 
   return (
-    <section className="py-24 bg-white dark:bg-gray-900">
+    <section id="faq" className="py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

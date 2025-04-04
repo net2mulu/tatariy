@@ -12,12 +12,13 @@ import {
 import { Sun, Moon, Menu, X, ChevronDown, Calendar } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 // Navigation data structure
 const navigationItems = [
   {
     id: "about",
-    title: "About Us",
+    title: "About",
     href: "/about",
   },
   {
@@ -107,11 +108,28 @@ type NavItem = {
   }[];
 };
 
-const NavLink = ({ item }: { item: NavItem }) => {
+const NavLink = ({
+  item,
+  isScrolled,
+}: {
+  item: NavItem;
+  isScrolled: boolean;
+}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isCapabilitiesRoute = pathname === "/capabilities";
+
+  // Check if this link is active
+  const isActive = !item.dropdown && pathname === item.href;
+
+  // Check if any dropdown item is active
+  const isDropdownActive =
+    item.dropdown &&
+    item.items?.some(
+      (subItem) =>
+        pathname === subItem.href || pathname.startsWith(subItem.href + "/")
+    );
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -134,11 +152,14 @@ const NavLink = ({ item }: { item: NavItem }) => {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className={`flex items-center ${
-            isCapabilitiesRoute
+          className={cn(
+            "flex items-center transition-colors hover:scale-110",
+            isCapabilitiesRoute && !isScrolled
               ? "text-white hover:text-gray-200"
-              : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-          } transition-colors`}
+              : "text-black hover:text-red-500 dark:text-white dark:hover:text-red-500",
+            isDropdownActive &&
+              "text-red-600 dark:text-red-400 font-semibold border-b-2 border-red-600 dark:border-red-400"
+          )}
         >
           {item.title}
           <ChevronDown
@@ -151,24 +172,39 @@ const NavLink = ({ item }: { item: NavItem }) => {
           <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-md">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
-                {item.items?.map((subItem) => (
-                  <Link
-                    key={subItem.href}
-                    href={subItem.href}
-                    className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition ease-in-out duration-150"
-                  >
-                    <div className="ml-4">
-                      <p className="text-base font-medium text-gray-900 dark:text-white">
-                        {subItem.title}
-                      </p>
-                      {subItem.description && (
-                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                          {subItem.description}
-                        </p>
+                {item.items?.map((subItem) => {
+                  const isSubItemActive =
+                    pathname === subItem.href ||
+                    pathname.startsWith(subItem.href + "/");
+                  return (
+                    <Link
+                      key={subItem.href}
+                      href={subItem.href}
+                      className={cn(
+                        "-m-3 p-3 flex items-start rounded-lg hover:bg-red-100 dark:hover:bg-gray-600 transition ease-in-out duration-150",
+                        isSubItemActive && "bg-red-50 dark:bg-gray-700"
                       )}
-                    </div>
-                  </Link>
-                ))}
+                    >
+                      <div className="ml-4">
+                        <p
+                          className={cn(
+                            "text-base font-medium",
+                            isSubItemActive
+                              ? "text-red-600 dark:text-red-400"
+                              : "text-gray-900 dark:text-white"
+                          )}
+                        >
+                          {subItem.title}
+                        </p>
+                        {subItem.description && (
+                          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                            {subItem.description}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -180,11 +216,14 @@ const NavLink = ({ item }: { item: NavItem }) => {
   return (
     <Link
       href={item.href}
-      className={`${
-        isCapabilitiesRoute
+      className={cn(
+        "transition-colors hover:scale-110 relative py-1",
+        isCapabilitiesRoute && !isScrolled
           ? "text-white hover:text-gray-200"
-          : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-      } transition-colors`}
+          : "text-black hover:text-red-500 dark:text-white dark:hover:text-red-500",
+        isActive &&
+          "text-red-600 dark:text-red-400 font-semibold border-b-2 border-red-600 dark:border-red-400"
+      )}
     >
       {item.title}
     </Link>
@@ -202,15 +241,25 @@ const MobileDropdown = ({
   const pathname = usePathname();
   const isCapabilitiesRoute = pathname === "/capabilities";
 
+  // Check if any dropdown item is active
+  const isDropdownActive =
+    item.dropdown &&
+    item.items?.some(
+      (subItem) =>
+        pathname === subItem.href || pathname.startsWith(subItem.href + "/")
+    );
+
   return (
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center justify-between w-full ${
+        className={cn(
+          "flex items-center justify-between w-full",
           isCapabilitiesRoute
             ? "text-white hover:text-gray-200"
-            : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-        }`}
+            : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white",
+          isDropdownActive && "text-red-600 dark:text-red-400 font-semibold"
+        )}
       >
         <span>{item.title}</span>
         <ChevronDown
@@ -221,20 +270,28 @@ const MobileDropdown = ({
       </button>
       {isOpen && (
         <div className="pl-4 mt-2 space-y-2">
-          {item.items?.map((subItem) => (
-            <Link
-              key={subItem.href}
-              href={subItem.href}
-              className={`block py-2 text-sm ${
-                isCapabilitiesRoute
-                  ? "text-white hover:text-gray-200"
-                  : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-              }`}
-              onClick={onItemClick}
-            >
-              {subItem.title}
-            </Link>
-          ))}
+          {item.items?.map((subItem) => {
+            const isSubItemActive =
+              pathname === subItem.href ||
+              pathname.startsWith(subItem.href + "/");
+            return (
+              <Link
+                key={subItem.href}
+                href={subItem.href}
+                className={cn(
+                  "block py-2 text-sm",
+                  isCapabilitiesRoute
+                    ? "text-white hover:text-gray-200"
+                    : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white",
+                  isSubItemActive &&
+                    "text-red-600 dark:text-red-400 font-semibold"
+                )}
+                onClick={onItemClick}
+              >
+                {subItem.title}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>
@@ -250,9 +307,11 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     console.log(isMobile);
+
     setMounted(true);
     const handleResize = () => setIsMobile(window.innerWidth < 640);
     window.addEventListener("resize", handleResize);
@@ -301,7 +360,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
@@ -314,7 +373,7 @@ export default function Navbar() {
                 alt="TATARIY logo"
                 width={200}
                 height={100}
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
           </div>
@@ -322,15 +381,19 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navigationItems.map((item) => (
-              <NavLink key={item.id} item={item} />
+              <NavLink isScrolled={isScrolled} key={item.id} item={item} />
             ))}
 
             <Link
-              href="/contact#calendly"
-              className="ml-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
+              href="/book"
+              className={cn(
+                "ml-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center",
+                pathname.startsWith("/contact") &&
+                  "bg-red-700 ring-2 ring-red-300"
+              )}
             >
               <Calendar className="h-4 w-4 mr-2" />
-              Book a Call
+              Book 30 mins with us
             </Link>
 
             {/* Desktop Theme Toggle */}
@@ -387,7 +450,11 @@ export default function Navbar() {
                   {!item.dropdown ? (
                     <Link
                       href={item.href}
-                      className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                      className={cn(
+                        "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors",
+                        pathname === item.href &&
+                          "text-red-600 dark:text-red-400 font-semibold"
+                      )}
                       onClick={closeMobileMenu}
                     >
                       {item.title}
@@ -403,7 +470,11 @@ export default function Navbar() {
                 <Link
                   href="/contact#calendly"
                   onClick={closeMobileMenu}
-                  className="flex items-center w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                  className={cn(
+                    "flex items-center w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg",
+                    pathname.startsWith("/contact") &&
+                      "bg-red-700 ring-2 ring-red-300"
+                  )}
                 >
                   <Calendar className="h-4 w-4 mr-2" />
                   <span>Book a Call</span>

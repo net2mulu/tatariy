@@ -6,7 +6,7 @@ import {
   BarChart2,
   Users2,
   GraduationCap,
-  Shield,
+  Briefcase,
 } from "lucide-react";
 
 const competencies = [
@@ -14,31 +14,31 @@ const competencies = [
     icon: Computer,
     title: "Information Technology",
     description:
-      "Comprehensive IT solutions including automation, system integration, and infrastructure management.",
+      "Custom software. Seamless integration. AI-enhanced support. We build secure, scalable systems that improve outcomes and drive mission performance.",
   },
   {
     icon: BarChart2,
     title: "Program Management",
     description:
-      "Expert program and project management services ensuring successful delivery and implementation.",
+      "We deliver from start to finish — managing risk, scope, and cost with precision. Our approach blends agility with discipline, powered by data and intelligent insight.",
   },
   {
     icon: Users2,
-    title: "Professional Services",
+    title: "Talent Acquisition",
     description:
-      "Specialized consulting and professional services tailored to government needs.",
-  },
-  {
-    icon: Shield,
-    title: "Security Services",
-    description:
-      "Advanced security solutions for protecting sensitive government information and assets.",
+      "We connect agencies with exceptional professionals in AI, cybersecurity, and advanced tech roles — many of whom others miss. We don't just fill roles; we build dream teams.",
   },
   {
     icon: GraduationCap,
     title: "Training",
     description:
-      "Comprehensive training programs designed to enhance workforce capabilities and knowledge.",
+      "Our learning solutions cultivate collaboration, resilience, and adaptability — preparing today's workforce for tomorrow's mission.",
+  },
+  {
+    icon: Briefcase,
+    title: "Professional Services",
+    description:
+      "When the mission can't wait, we step in. Our experts fill critical gaps with precision support across IT, cybersecurity, and AI-driven transformation.",
   },
 ];
 

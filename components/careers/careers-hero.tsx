@@ -14,13 +14,24 @@ export default function CareersHero() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Join Our Team
-          </h1>
+          <div className=" mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+              Careers at TATARIY
+            </h1>
+            <span className="text-xs md:text-sm font-bold text-gray-600 dark:text-white">
+              Built by Doers. Driven by Purpose.
+            </span>
+          </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            At TATARIY, were looking for passionate individuals who want to make
-            a difference in government technology. Join us in shaping the future
-            of public sector innovation.
+            At TATARIY, talent isn&apos;t an alterthought - its our foundation.
+            As a company that delivers Talent Acquisition as a core service we
+            know how to recognize potential and match it with purpose
+            That&apos;s exactly now we crow our own team.
+          </p>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            We&apos;re looking for people who take action, lead with integrity.
+            and are committed to delivering results that matter if that&apos;s
+            you. let&apos;s build something great together.
           </p>
           <Link
             href="#job-openings"

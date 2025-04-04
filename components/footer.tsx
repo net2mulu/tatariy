@@ -28,16 +28,32 @@ export default function Footer() {
               solutions and proven expertise in digital transformation.
             </p>
             <div className="flex mt-4 space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-500">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/share/157VR76n3j/?mibextid=wwXIfr"
+                className="text-gray-400 hover:text-blue-500"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-500">
+              <a
+                target="_blank"
+                href="https://x.com/tatariygov?S=11&t=vnRTkx4YiwOg8OY_aQ7-VA"
+                className="text-gray-400 hover:text-blue-500"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-500">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/company/tatariy/"
+                className="text-gray-400 hover:text-blue-500"
+              >
                 <LinkedIn size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-500">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/tatariyllc?igsh=NjR2bHF0ZXg2MzY5 "
+                className="text-gray-400 hover:text-blue-500"
+              >
                 <Instagram size={20} />
               </a>
             </div>
@@ -91,10 +107,10 @@ export default function Footer() {
               Address
             </h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li>123 Tech Avenue</li>
+              <li>Headquartered in Lake Ridge, VA</li>
               <li>Washington, D.C. 20001</li>
-              <li>Phone: (202) 555-0123</li>
-              <li>Email: info@tatariy.com</li>
+              <li>Phone: (202) 250-4252</li>
+              <li>Email: rahwa.haile@tatariy.com</li>
             </ul>
           </div>
         </div>
