@@ -384,18 +384,6 @@ export default function Navbar() {
               <NavLink isScrolled={isScrolled} key={item.id} item={item} />
             ))}
 
-            <Link
-              href="/book"
-              className={cn(
-                "ml-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center",
-                pathname.startsWith("/contact") &&
-                  "bg-red-700 ring-2 ring-red-300"
-              )}
-            >
-              <Calendar className="h-4 w-4 mr-2" />
-              Book 30 mins with us
-            </Link>
-
             {/* Desktop Theme Toggle */}
             <button
               onClick={toggleTheme}

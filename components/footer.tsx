@@ -4,6 +4,7 @@ import {
   Twitter,
   LinkedinIcon as LinkedIn,
   Instagram,
+  Calendar,
 } from "lucide-react";
 import Image from "next/image";
 import Newsletter from "./newsletter";
@@ -108,10 +109,18 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400">
               <li>Headquartered in Lake Ridge, VA</li>
-              <li>Washington, D.C. 20001</li>
               <li>Phone: (202) 250-4252</li>
               <li>Email: rahwa.haile@tatariy.com</li>
             </ul>
+            <Link
+              href="/book"
+              className={
+                "my-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
+              }
+            >
+              <Calendar className="h-4 w-4 mr-2" />
+              Book 30 mins with us
+            </Link>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
