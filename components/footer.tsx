@@ -28,6 +28,19 @@ export default function Footer() {
               Empowering government agencies with cutting-edge technology
               solutions and proven expertise in digital transformation.
             </p>
+            <Link
+              href="/book"
+              className={
+                "my-2 px-4 py-2 w-max bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
+              }
+            >
+              <Calendar className="h-4 w-4 mr-2" />
+              Book 30 mins with us
+            </Link>
+
+            <div className="py-6">
+              <Newsletter />
+            </div>
             <div className="flex mt-4 space-x-4">
               <a
                 target="_blank"
@@ -57,9 +70,6 @@ export default function Footer() {
               >
                 <Instagram size={20} />
               </a>
-            </div>
-            <div className="py-6">
-              <Newsletter />
             </div>
           </div>
 
@@ -112,15 +122,6 @@ export default function Footer() {
               <li>Phone: (202) 250-4252</li>
               <li>Email: rahwa.haile@tatariy.com</li>
             </ul>
-            <Link
-              href="/book"
-              className={
-                "my-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center"
-              }
-            >
-              <Calendar className="h-4 w-4 mr-2" />
-              Book 30 mins with us
-            </Link>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">

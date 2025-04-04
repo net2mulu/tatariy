@@ -103,18 +103,18 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="sm:mb-6"
+        className="sm:mb-14 z-40 hover:scale-110"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <Link
+        <a
           href="/statement.pdf"
           target="_blank"
-          className="inline-block px-6 text-base py-3 font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="z-50 p-6 text-base py-3 font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           Government Technology Solutions
-        </Link>
+        </a>
       </motion.div>
 
       {/* tag line */}
