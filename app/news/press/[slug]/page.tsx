@@ -1,16 +1,18 @@
+import { notFound } from "next/navigation";
 import { PressDetail } from "@/components/press/press-detail";
 import { getPressReleaseBySlug } from "@/data/press-data";
-import { notFound } from "next/navigation";
 
-export default function PressReleasePage({
+export default async function PressReleasePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const press = getPressReleaseBySlug(params.slug);
+  const { slug } = await params;
+
+  const press = getPressReleaseBySlug(slug);
 
   if (!press) {
-    return notFound();
+    notFound();
   }
 
   return (
