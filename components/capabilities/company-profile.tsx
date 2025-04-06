@@ -49,7 +49,7 @@ export default function CompanyProfile() {
   return (
     <section
       id="company-profile"
-      className="py-24 bg-gray-50 dark:bg-gray-800 scroll-mt-16"
+      className="py-8 bg-gray-50 dark:bg-gray-800 scroll-mt-16"
     >
       <div className="container mx-auto px-4 max-w-9xl">
         <motion.div

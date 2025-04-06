@@ -6,21 +6,21 @@ import { ArrowRight } from "lucide-react";
 
 export default function About() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-red-50 dark:from-gray-900 dark:via-blue-900/10 dark:to-red-900/10">
+    <section className="py-12 bg-gradient-to-br from-gray-50 via-blue-50 to-red-50 dark:from-gray-900 dark:via-blue-900/10 dark:to-red-900/10">
       <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
-          <span className="text-red-600 dark:text-red-400 font-medium mb-2 block">
-            Who we are
-          </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            About Us
+            Who we are
           </h2>
+          <span className="text-red-600 dark:text-red-400 font-medium mb-2 text-lg block">
+            Doers by Design
+          </span>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-600 mx-auto" />
         </motion.div>
 
@@ -33,14 +33,16 @@ export default function About() {
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-6 text-center">
-              <p className="text-xl md:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
-                Welcome to TATARIY – your premier Small Disadvantaged and
-                Minority Women-Owned Government Contracting Services Company.
+              <p className="text-xl text-justify md:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
+                TATARIY is a purpose-driven government contracting firm built to
+                deliver what matters: results, trust, and transformative impact.
+                Headquartered in Lake Ridge, Virginia, we partner with federal,
+                state, and local agencies to solve complex challenges across
+                Information Technology, Program Management, Talent Acquisition,
+                Training, and Professional Services.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Founded by three dedicated professionals committed to excellence
-                and innovation, TATARIY brings a unique blend of expertise and
-                passion to the table.
+                TATARIY means DOER - and that&apos;s who we are.
               </p>
             </div>
           </motion.div>
@@ -57,11 +59,11 @@ export default function About() {
                 Experience & Expertise
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                With a combined 15+ years of leadership experience serving major
-                federal agencies, we have positioned ourselves to offer a unique
-                blend of expertise, including Information Technology, Program
-                Management, Professional Services, Talent Acquisition, and
-                Training services.
+                With over 15 years of experience supporting defense, civilian,
+                and SLED, missions, we bring a sharp focus and tactical know-how
+                to every engagement. Our teams blend innovation and discipline -
+                delivering high-impact solutions that meet mission needs and
+                exceed expectations.
               </p>
             </div>
 
@@ -70,11 +72,10 @@ export default function About() {
                 Track Record
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                From spearheading Information Technology Automation and
-                Technical Support Services and Foreign Military Sales programs
-                for the Department of Defense to fortifying the security of
-                overseas diplomatic missions at the Department of State, our
-                track record speaks for itself.
+                From supporting Foreign Military Sales programs for the Air
+                Force to enhancing cyber readiness at the Department of State,
+                our past performance reflects our commitment to precision,
+                speed, and measurable success
               </p>
             </div>
           </motion.div>
@@ -86,11 +87,12 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-3xl mx-auto text-center mt-8"
           >
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              At TATARIY, we are more than just a contracting company – we are
-              your trusted partner in driving innovation, efficiency, and
-              success within the state and federal government. Join us on our
-              journey to redefine excellence in government contracting services.
+            <p className="text-lg text-justify text-gray-700 dark:text-gray-300 mb-8">
+              At TATARIY, we don&apos;t just show up - we solve. We lead with
+              heart, build with brains, and deliver with integrity. Whether
+              we&apos;re supporting a prime on a high-stakes initiative or
+              helping a small agency scale with confidence, we bring our full
+              capability to the table - and we get the job done
             </p>
             <Link
               href="/about"

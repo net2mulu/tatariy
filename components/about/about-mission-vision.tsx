@@ -5,7 +5,7 @@ import { Compass, Target } from "lucide-react";
 
 export default function AboutMissionVision() {
   return (
-    <section className="py-24 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <section className="py-12 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 max-w-9xl">
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
           {/* Vision */}

@@ -13,8 +13,8 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 dark:bg-gray-800 py-12">
       <div className="container mx-auto px-4 max-w-9xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+          <div className="col-span-2 pr-2">
             <Link href="/" className="inline-block">
               <Image
                 src="/hero/logo.png"
@@ -73,7 +73,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
               Links
             </h3>
@@ -88,18 +88,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/capabilities"
                   className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
                 >
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/case-studies"
-                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
-                >
-                  Case Studies
+                  Capabilities
                 </Link>
               </li>
               <li>
@@ -109,11 +101,99 @@ export default function Footer() {
                 >
                   Careers
                 </Link>
+              </li>{" "}
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-1">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+              Services
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/services/information-technology"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Information Technology
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/program-management"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Program Management
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/professional-services"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Professional Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/talent-acquisition"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Talent Acquisition
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/training"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Training
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-span-1">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+              News & Events
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/news/press"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Press
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/news/events"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/news/blog"
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+                >
+                  BLog
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
               Address
             </h3>

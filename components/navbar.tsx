@@ -309,6 +309,8 @@ export default function Navbar() {
   const mobileButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
 
+  const isCapabilitiesRoute = pathname === "/capabilities";
+
   useEffect(() => {
     console.log(isMobile);
 
@@ -366,7 +368,8 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               <Image
                 src={
-                  resolvedTheme === "dark"
+                  resolvedTheme === "dark" ||
+                  (isCapabilitiesRoute && !isScrolled)
                     ? "/hero/logo-white.png"
                     : "/hero/logo.png"
                 } // Use different logos

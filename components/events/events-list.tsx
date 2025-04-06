@@ -4,69 +4,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, MapPin, ExternalLink } from "lucide-react";
-
-// Mock data for events
-const events = [
-  {
-    id: 1,
-    title: "Federal IT Modernization Summit",
-    slug: "federal-it-modernization-summit",
-    date: "June 15, 2025",
-    time: "9:00 AM - 4:00 PM EST",
-    location: "Washington Convention Center, Washington DC",
-    type: "Conference",
-    description:
-      "Join government and industry leaders for a day of insights and discussions on the latest trends and strategies in federal IT modernization. Learn about cloud migration, cybersecurity, and AI implementation in government agencies.",
-    image: "/placeholder.svg?height=600&width=800",
-    registrationLink: "https://example.com/register",
-  },
-  {
-    id: 2,
-    title: "Navigating Government Contracting: A Webinar for Small Businesses",
-    slug: "navigating-government-contracting-webinar",
-    date: "May 20, 2025",
-    time: "1:00 PM - 2:30 PM EST",
-    location: "Virtual Event",
-    type: "Webinar",
-    description:
-      "This webinar is designed to help small businesses understand the government contracting landscape. Our experts will share insights on certification processes, finding opportunities, and developing winning proposals.",
-    image: "/placeholder.svg?height=600&width=800",
-    registrationLink: "https://example.com/register",
-  },
-  {
-    id: 3,
-    title: "Cybersecurity Compliance Workshop",
-    slug: "cybersecurity-compliance-workshop",
-    date: "July 8, 2025",
-    time: "10:00 AM - 3:00 PM EST",
-    location: "Tysons Corner Marriott, Virginia",
-    type: "Workshop",
-    description:
-      "A hands-on workshop focused on helping contractors meet CMMC 2.0 requirements. Participants will learn about assessment processes, documentation requirements, and practical implementation strategies.",
-    image: "/placeholder.svg?height=600&width=800",
-    registrationLink: "https://example.com/register",
-  },
-  {
-    id: 4,
-    title: "Women in Government Technology Leadership Forum",
-    slug: "women-in-government-technology-leadership-forum",
-    date: "August 12, 2025",
-    time: "8:30 AM - 2:00 PM EST",
-    location: "National Press Club, Washington DC",
-    type: "Forum",
-    description:
-      "This forum brings together women leaders in government technology to share experiences, insights, and strategies for success. Networking opportunities, panel discussions, and keynote speeches from prominent industry figures.",
-    image: "/placeholder.svg?height=600&width=800",
-    registrationLink: "https://example.com/register",
-  },
-];
+import { eventsData } from "@/data/event-detail";
 
 export function EventsList() {
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid gap-12">
-          {events.map((event, index) => (
+          {eventsData.map((event, index) => (
             <motion.article
               key={event.slug}
               initial={{ opacity: 0, y: 20 }}
@@ -110,7 +55,7 @@ export function EventsList() {
                   </div>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-600 dark:text-gray-300 line-clamp-4">
                   {event.description}
                 </p>
 

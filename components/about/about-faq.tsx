@@ -226,7 +226,7 @@ export default function AboutFaq() {
   const rightColumnFaqs = faqs.slice(Math.ceil(faqs.length / 2));
 
   return (
-    <section id="faq" className="py-24 bg-white dark:bg-gray-900">
+    <section id="faq" className="py-12 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

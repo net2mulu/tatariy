@@ -22,7 +22,7 @@ export function ContactInfo() {
               TATARIY, LLC
             </p>
             <p className="text-gray-700 dark:text-gray-300">
-              Headquartered, Virginia, USA
+              Headquartered in Lake Ridge, VA
             </p>
           </div>
         </div>
@@ -35,10 +35,10 @@ export function ContactInfo() {
             <div className="flex items-center">
               <Mail className="h-5 w-5 text-red-600 dark:text-red-400 mr-3" />
               <Link
-                href="mailto:founders@tatariy.com"
+                href="mailto:rahwa.haile@tatariy.com"
                 className="text-red-600 dark:text-red-400 hover:underline"
               >
-                founders@tatariy.com
+                rahwa.haile@tatariy.com
               </Link>
             </div>
 

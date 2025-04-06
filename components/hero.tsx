@@ -207,14 +207,20 @@ export default function Hero() {
         <div className="container mx-auto px-4 max-w-9xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center">
             {[
-              { number: "15+", text: "Years Experience" },
-              { number: "100+", text: "Projects Delivered" },
-              { number: "50+", text: "Agency Partners" },
-              { number: "24/7", text: "Support Available" },
+              {
+                number: "15+",
+                text: "Years of Federal Contracting Experience",
+              },
+              { number: "Trusted", text: "By Civilian & Defense Agencies" },
+              {
+                number: "Certified",
+                text: "EDWSOB/WOSB, MWAA-SLBA, DBE, SWaM, SBE",
+              },
+              { number: "100%", text: "Past Performance Success" },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="text-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-white/50 dark:border-gray-700/50"
+                className="text-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-white/50 dark:border-gray-700/50 min-h-40"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}

@@ -13,60 +13,36 @@ import {
   Facebook,
   Linkedin,
   ExternalLink,
-  User,
 } from "lucide-react";
-
-type Speaker = {
-  name: string;
-  title: string;
-  bio: string;
-};
-
-type AgendaItem = {
-  time: string;
-  title: string;
-  speaker?: string;
-};
+import type { Event } from "@/data/event-detail";
 
 type EventDetailProps = {
-  event: {
-    id: number;
-    title: string;
-    slug: string;
-    date: string;
-    time: string;
-    location: string;
-    address: string;
-    type: string;
-    description: string;
-    fullDescription: string;
-    image: string;
-    registrationLink: string;
-    organizer: string;
-    speakers?: Speaker[];
-    agenda?: AgendaItem[];
-  };
+  event: Event;
 };
 
 export function EventDetail({ event }: EventDetailProps) {
   return (
     <article className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
+      {/* Hero Section with Refined Back Link Positioning */}
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4 max-w-7xl">
+          {/* Navigation Bar - Separate from main content */}
+          <div className="mb-12">
+            <Link
+              href="/news/events"
+              className="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 rounded-lg text-blue-600 dark:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Events
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <Link
-              href="/news/events"
-              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 mb-6"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Events
-            </Link>
             <span className="inline-block px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-full mb-4">
               {event.type}
             </span>
@@ -100,97 +76,37 @@ export function EventDetail({ event }: EventDetailProps) {
         </div>
       </section>
 
-      {/* Featured Image */}
-      <div className="relative h-[400px] md:h-[500px] w-full">
-        <Image
-          src={event.image || "/placeholder.svg"}
-          alt={event.title}
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
-
-      {/* Content */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      {/* Content Section with Integrated Image */}
+      <section className="py-12 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Main Content */}
+              {/* Main Content with Integrated Image */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="md:col-span-2"
               >
+                {/* Integrated Event Image */}
+                <div className="mb-8">
+                  <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src={event.image || "/placeholder.svg"}
+                      alt={event.title}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Event Description */}
                 <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
                   <div
                     dangerouslySetInnerHTML={{ __html: event.fullDescription }}
                   />
                 </div>
-
-                {/* Speakers Section */}
-                {event.speakers && event.speakers.length > 0 && (
-                  <div className="mb-12">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                      Featured Speakers
-                    </h2>
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      {event.speakers.map((speaker, index) => (
-                        <div
-                          key={index}
-                          className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg"
-                        >
-                          <div className="flex items-start gap-4">
-                            <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full">
-                              <User className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                            </div>
-                            <div>
-                              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                                {speaker.name}
-                              </h3>
-                              <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">
-                                {speaker.title}
-                              </p>
-                              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                                {speaker.bio}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Agenda Section */}
-                {event.agenda && event.agenda.length > 0 && (
-                  <div className="mb-12">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                      Event Agenda
-                    </h2>
-                    <div className="space-y-4">
-                      {event.agenda.map((item, index) => (
-                        <div
-                          key={index}
-                          className="border-l-4 border-blue-600 dark:border-blue-400 pl-4 py-2"
-                        >
-                          <p className="text-blue-600 dark:text-blue-400 font-medium">
-                            {item.time}
-                          </p>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                            {item.title}
-                          </h3>
-                          {item.speaker && (
-                            <p className="text-gray-600 dark:text-gray-400 text-sm">
-                              Presenter: {item.speaker}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </motion.div>
 
               {/* Sidebar */}
