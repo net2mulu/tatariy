@@ -234,7 +234,7 @@ export default function CertificationCarousel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
             onClick={closeModal}
           >
             <motion.div
@@ -247,10 +247,10 @@ export default function CertificationCarousel() {
             >
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 md:top-4 md:right-4 bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                className="absolute z-50 top-2 right-2 md:top-4 md:right-4 bg-gray-100 dark:bg-gray-700 rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                 aria-label="Close modal"
               >
-                <X className="h-5 w-5 text-gray-700 dark:text-gray-200" />
+                <X className="h-5 w-5  text-gray-700 dark:text-gray-200" />
               </button>
 
               <div className="relative h-48 md:h-64 w-full mb-4 md:mb-6">
