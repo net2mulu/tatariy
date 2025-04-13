@@ -33,7 +33,7 @@ export default function About() {
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-6 text-center">
-              <p className="text-xl text-justify md:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
+              <p className="text-md sm:text-xl text-start sm:text-justify md:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
                 TATARIY is a purpose-driven government contracting firm built to
                 deliver what matters: results, trust, and transformative impact.
                 Headquartered in Lake Ridge, Virginia, we partner with federal,

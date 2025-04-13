@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from "framer-motion";
-import { Sun, Moon, Menu, X, ChevronDown, Calendar } from "lucide-react";
+import { Sun, Moon, Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -469,20 +469,6 @@ export default function Navbar() {
               ))}
 
               {/* Book a Call button for mobile */}
-              <div className="px-4 py-2">
-                <Link
-                  href="/contact#calendly"
-                  onClick={closeMobileMenu}
-                  className={cn(
-                    "flex items-center w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-lg",
-                    pathname.startsWith("/contact") &&
-                      "bg-red-700 ring-2 ring-red-300"
-                  )}
-                >
-                  <Calendar className="h-4 w-4 mr-2" />
-                  <span>Book a Call</span>
-                </Link>
-              </div>
 
               {/* Mobile Theme Toggle */}
               <div className="px-4 py-2">

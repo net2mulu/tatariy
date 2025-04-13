@@ -11,8 +11,10 @@ import {
 import Image from "next/image";
 import Newsletter from "./newsletter";
 import { useTheme } from "next-themes";
+import { useLegalModal } from "@/context/legal-modal-context";
 
 export default function Footer() {
+  const { openModal } = useLegalModal();
   const { resolvedTheme } = useTheme();
 
   return (
@@ -220,18 +222,18 @@ export default function Footer() {
             </p>
 
             <div className="mt-4 md:mt-0">
-              <Link
-                href="/privacy"
-                className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 mr-4"
+              <span
+                onClick={() => openModal("terms")}
+                className="text-sm cursor-pointer text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 mr-4"
               >
                 Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+              </span>
+              <span
+                onClick={() => openModal("terms")}
+                className="text-sm cursor-pointer text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
               >
                 Terms of Service
-              </Link>
+              </span>
             </div>
           </div>
         </div>

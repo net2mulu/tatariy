@@ -1,16 +1,18 @@
-import "./globals.css";
-import type { Metadata } from "next";
+import type React from "react";
 import { Inter } from "next/font/google";
+import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { LegalModalProvider } from "@/context/legal-modal-context";
+import { LegalModalWrapper } from "@/components/legal-modal-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "TATARIY - Government Technology Solutions",
+export const metadata = {
+  title: "TATARIY - Government Contracting Services",
   description:
-    "Experience You Trust, Expertise You Need - Leading government technology solutions provider.",
+    "Premier Small Disadvantaged and Minority Women-Owned Government Contracting Services Company",
 };
 
 export default function RootLayout({
@@ -21,10 +23,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          {children}
-          <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LegalModalProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <LegalModalWrapper />
+          </LegalModalProvider>
         </ThemeProvider>
       </body>
     </html>

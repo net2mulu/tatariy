@@ -23,7 +23,7 @@ export function CalendlyWidget() {
       {mounted && (
         <div className="calendly-inline-widget h-[650px] rounded-lg overflow-hidden">
           <InlineWidget
-            url="https://calendly.com/nati2mulugeta"
+            url="https://calendly.com/rahwa-haile-tatariy"
             styles={{
               height: "650px",
               width: "100%",

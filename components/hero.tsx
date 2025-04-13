@@ -38,12 +38,7 @@ export default function Hero() {
 
   const TypewriterEffect = () => {
     const [text] = useTypewriter({
-      words: [
-        "Solutions That Work.",
-        "Innovation That Delivers.",
-        "Results That Matter.",
-        "Expertise You Need.",
-      ],
+      words: ["Expertise You Need.", "Expertise You Need."],
       loop: false,
       delaySpeed: 1000,
       stopAtLastWord: true, // This will make it stop completely at the last word
@@ -115,7 +110,7 @@ export default function Hero() {
             <a
               href="/statement.pdf"
               target="_blank"
-              className="hidden  px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="px-6 py-1 text-base font-medium text-blue-600 dark:text-white border dark:border-white border-blue-600 rounded-full select-none"
               rel="noreferrer"
             >
               Government Technology Solutions
