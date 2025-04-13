@@ -20,12 +20,9 @@ export default function AboutHero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-4xl mb-4 md:text-5xl lg:text-6xl font-bold text-gray-700 dark:text-white">
             About Us
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-            We are DOERS!
-          </p>
         </motion.div>
 
         {/* <motion.div

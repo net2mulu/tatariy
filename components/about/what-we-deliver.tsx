@@ -43,7 +43,7 @@ export default function WhatWeDeliver() {
   ];
 
   return (
-    <section className="py-12 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,27 +58,55 @@ export default function WhatWeDeliver() {
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: service.delay }}
-              className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-6">
-                <service.icon className="w-7 h-7 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+        {/* Custom layout for 5 items */}
+        <div className="flex flex-col items-center">
+          {/* First row - 3 items */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 w-full">
+            {services.slice(0, 3).map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: service.delay }}
+                className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-6">
+                  <service.icon className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Second row - 2 items centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:max-w-2xl w-full">
+            {services.slice(3, 5).map((service, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: service.delay }}
+                className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-6">
+                  <service.icon className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -41,7 +41,7 @@ export default function About() {
                 Information Technology, Program Management, Talent Acquisition,
                 Training, and Professional Services.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+              <p className="text-lg text-blue-500 font-normal">
                 TATARIY means DOER - and that&apos;s who we are.
               </p>
             </div>

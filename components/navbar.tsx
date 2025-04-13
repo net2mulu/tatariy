@@ -111,9 +111,11 @@ type NavItem = {
 const NavLink = ({
   item,
   isScrolled,
+  onItemClick,
 }: {
   item: NavItem;
   isScrolled: boolean;
+  onItemClick?: () => void;
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -184,6 +186,10 @@ const NavLink = ({
                         "-m-3 p-3 flex items-start rounded-lg hover:bg-red-100 dark:hover:bg-gray-600 transition ease-in-out duration-150",
                         isSubItemActive && "bg-red-50 dark:bg-gray-700"
                       )}
+                      onClick={() => {
+                        setShowDropdown(false);
+                        if (onItemClick) onItemClick();
+                      }}
                     >
                       <div className="ml-4">
                         <p
@@ -224,6 +230,7 @@ const NavLink = ({
         isActive &&
           "text-red-600 dark:text-red-400 font-semibold border-b-2 border-red-600 dark:border-red-400"
       )}
+      onClick={onItemClick}
     >
       {item.title}
     </Link>
@@ -384,7 +391,12 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navigationItems.map((item) => (
-              <NavLink isScrolled={isScrolled} key={item.id} item={item} />
+              <NavLink
+                isScrolled={isScrolled}
+                key={item.id}
+                item={item}
+                onItemClick={closeMobileMenu}
+              />
             ))}
 
             {/* Desktop Theme Toggle */}

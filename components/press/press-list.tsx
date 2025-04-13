@@ -39,7 +39,7 @@ export function PressList() {
                     </div>
                   </div>
 
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                  <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
                     {press.title}
                   </h2>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -49,7 +49,7 @@ export function PressList() {
                   <div className="flex flex-col sm:flex-row gap-4 pt-2">
                     <Link
                       href={`/news/press/${press.slug}`}
-                      className="inline-flex items-center justify-center px-6 py-2 bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-medium rounded-lg transition-all duration-300 shadow-sm hover:shadow-md"
+                      className="inline-flex items-center justify-center px-6 py-2 border border-transparent bg-gradient-to-r from-blue-600/10 to-red-600/10 hover:from-blue-600/20 hover:to-red-600/20 text-blue-600 dark:text-blue-400 font-medium rounded-lg transition-colors"
                     >
                       Read Full Release
                       <ArrowRight className="ml-2 h-4 w-4" />

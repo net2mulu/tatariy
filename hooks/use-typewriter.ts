@@ -8,6 +8,7 @@ interface UseTypewriterProps {
     delaySpeed?: number
     typeSpeed?: number
     deleteSpeed?: number
+    stopAtLastWord?: boolean // New parameter
 }
 
 export function useTypewriter({
@@ -16,12 +17,14 @@ export function useTypewriter({
     delaySpeed = 1500,
     typeSpeed = 80,
     deleteSpeed = 50,
+    stopAtLastWord = false, // Default to false for backward compatibility
 }: UseTypewriterProps) {
     const [text, setText] = useState("")
     const [isDeleting, setIsDeleting] = useState(false)
     const [wordIndex, setWordIndex] = useState(0)
     const [typingSpeed, setTypingSpeed] = useState(typeSpeed)
     const isMounted = useRef(false)
+    const isComplete = useRef(false) // Track if we've completed the animation
 
     useEffect(() => {
         isMounted.current = true
@@ -31,9 +34,10 @@ export function useTypewriter({
     }, [])
 
     useEffect(() => {
-        if (!words.length || !isMounted.current) return
+        if (!words.length || !isMounted.current || isComplete.current) return
 
         const currentWord = words[wordIndex]
+        const isLastWord = wordIndex === words.length - 1
 
         const handleTyping = () => {
             if (!isMounted.current) return
@@ -50,6 +54,12 @@ export function useTypewriter({
 
             // Handle completion of typing or deleting
             if (!isDeleting && text === currentWord) {
+                // Check if this is the last word and we should stop
+                if (isLastWord && stopAtLastWord) {
+                    isComplete.current = true
+                    return
+                }
+
                 // Delay before starting to delete
                 setTimeout(() => {
                     if (isMounted.current) setIsDeleting(true)
@@ -68,8 +78,7 @@ export function useTypewriter({
 
         const timer = setTimeout(handleTyping, typingSpeed)
         return () => clearTimeout(timer)
-    }, [words, text, isDeleting, wordIndex, typingSpeed, delaySpeed, loop, typeSpeed, deleteSpeed])
+    }, [words, text, isDeleting, wordIndex, typingSpeed, delaySpeed, loop, typeSpeed, deleteSpeed, stopAtLastWord])
 
     return [text]
 }
-

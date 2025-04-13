@@ -39,13 +39,14 @@ export default function Hero() {
   const TypewriterEffect = () => {
     const [text] = useTypewriter({
       words: [
-        "Expertise You Need.",
         "Solutions That Work.",
         "Innovation That Delivers.",
         "Results That Matter.",
+        "Expertise You Need.",
       ],
-      loop: true,
-      delaySpeed: 2000,
+      loop: false,
+      delaySpeed: 1000,
+      stopAtLastWord: true, // This will make it stop completely at the last word
     });
 
     return <>{text}</>;
@@ -54,12 +55,12 @@ export default function Hero() {
   return (
     <div
       ref={ref}
-      className="relative min-h-screen flex flex-col items-center justify-start pt-44 gap-8 sm:pt-0 sm:justify-center sm:gap-0 overflow-hidden bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800"
+      className="relative min-h-screen w-full overflow-x-hidden flex flex-col items-center bg-red-400 justify-center bg-gradient-to-br from-blue-50 to-red-50 dark:from-gray-900 dark:to-gray-800"
     >
       {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/40 dark:bg-blue-500/30 rounded-full filter blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-blue-500/40 dark:bg-blue-500/30 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -71,7 +72,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/40 dark:bg-red-500/30 rounded-full filter blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-red-500/40 dark:bg-red-500/30 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -84,7 +85,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/3 w-72 h-72 bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl"
+          className="absolute top-1/2 right-1/3 w-48 md:w-72 h-48 md:h-72 bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -102,110 +103,104 @@ export default function Hero() {
         </div>
       </div>
 
-      <motion.div
-        className="sm:mb-14 z-40 hover:scale-110"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <a
-          href="/statement.pdf"
-          target="_blank"
-          className="z-50 p-6 text-base py-3 font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
-          Government Technology Solutions
-        </a>
-      </motion.div>
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-8 md:gap-12">
+          {/* Download button */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="hover:scale-110"
+          >
+            <a
+              href="/statement.pdf"
+              target="_blank"
+              className="hidden  px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              rel="noreferrer"
+            >
+              Government Technology Solutions
+            </a>
+          </motion.div>
 
-      {/* tag line */}
-      <div
-        ref={taglineRef}
-        className="relative"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      >
-        <motion.h1
-          className="text-3xl md:text-6xl text-center flex flex-col md:flex-row font-bold text-gray-900 dark:text-white mx-auto"
+          {/* Tagline */}
+          <div
+            ref={taglineRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="w-full"
+          >
+            <motion.h1
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-center flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-bold text-gray-900 dark:text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              style={{
+                rotateX,
+                rotateY,
+                transformStyle: "preserve-3d",
+                perspective: "1000px",
+              }}
+            >
+              <motion.span
+                className="bg-gradient-to-r from-red-600 to-blue-600 dark:from-red-400 dark:to-blue-400 text-transparent bg-clip-text whitespace-nowrap"
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.3 },
+                }}
+              >
+                Experience You Trust,
+              </motion.span>
+              <motion.span
+                className="bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text whitespace-nowrap"
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.3 },
+                }}
+              >
+                <TypewriterEffect />
+              </motion.span>
+            </motion.h1>
+          </div>
+
+          {/* Description and CTA */}
+          <div className="w-full max-w-3xl mx-auto text-center space-y-8 px-4">
+            <motion.p
+              className="text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              TATARIY LLC is your trusted partner in government contracting,
+              delivering excellence to every mission. We streamline IT, Program
+              Management, Talent Acquisition, and Training, empowering agencies
+              to excel in an AI-driven world with a people-first approach.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex justify-center"
+            >
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Learn more
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Trust indicators */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-            perspective: "1000px",
-          }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-12 md:mt-24"
         >
-          <motion.span
-            className="block bg-gradient-to-r from-red-600 to-blue-600 dark:from-red-400 dark:to-blue-400 text-transparent bg-clip-text mb-2 md:mb-0"
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.3 },
-            }}
-          >
-            Experience You Trust,
-          </motion.span>
-          <motion.span
-            className="block md:ml-2 bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text"
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.3 },
-            }}
-          >
-            <TypewriterEffect />
-          </motion.span>
-        </motion.h1>
-      </div>
-
-      {/* Content */}
-      <motion.div
-        className="relative z-20 container mx-auto py-4 sm:py-16 max-w-9xl lg:max-w-9xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-6xl mx-auto text-center px-4 sm:px-0">
-          <motion.p
-            className="text-sm sm:text-lg md:text-xl text-justify text-gray-600 dark:text-gray-300 mb-10 mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            TATARIY LLC is your trusted partner in government contracting,
-            delivering excellence to every mission. We streamline IT, Program
-            Management, Talent Acquisition, and Training, empowering agencies to
-            excel in an AI-driven world with a people-first approach. Our track
-            record of cost savings, uplifted teams, and uncompromised integrity
-            speaks for itself.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Learn more
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-            {/* <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-sm sm:text-base font-medium text-gray-800 dark:text-white border-2 border-gray-800/20 dark:border-white/20 hover:border-gray-800/40 dark:hover:border-white/40 hover:bg-gray-800/5 dark:hover:bg-white/5 rounded-lg transition-all duration-300"
-            >
-              Get in Touch
-            </Link> */}
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Trust indicators */}
-      <div className="absolute bottom-2 md:bottom-10 left-0 right-0 z-20">
-        <div className="container mx-auto px-4 max-w-9xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
               {
                 number: "15+",
@@ -220,7 +215,7 @@ export default function Hero() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="text-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-white/50 dark:border-gray-700/50 min-h-40"
+                className="text-center p-4 rounded-lg bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg border border-white/50 dark:border-gray-700/50"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
@@ -229,16 +224,16 @@ export default function Hero() {
                   boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text mb-1">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-red-600 dark:from-blue-400 dark:to-red-400 text-transparent bg-clip-text mb-1">
                   {item.number}
                 </div>
-                <div className="text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300">
+                <div className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
                   {item.text}
                 </div>
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

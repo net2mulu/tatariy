@@ -43,6 +43,12 @@ const naicsCodes = [
 
 const features = [
   {
+    icon: CheckCircle,
+    title: "Integrity First",
+    description:
+      "Rooted in unwavering honesty and integrity, our business foundation mirrors the service experience you can expect.",
+  },
+  {
     icon: Shield,
     title: "Exceptional Problem-Solving",
     description:
@@ -66,19 +72,13 @@ const features = [
     description:
       "We stand ready 24/7, every day of the year, ensuring unwavering availability for your needs.",
   },
-  {
-    icon: CheckCircle,
-    title: "Integrity First",
-    description:
-      "Rooted in unwavering honesty and integrity, our business foundation mirrors the service experience you can expect.",
-  },
 ];
 
 export default function FederalExperience() {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-600/90 via-purple-600/90 to-blue-600/90 dark:from-red-900/90 dark:via-purple-800/90 dark:to-blue-900/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-violet-600 dark:from-blue-500 dark:to-violet-800" />
 
       {/* Particles */}
       <div className="absolute inset-0">
@@ -100,7 +100,7 @@ export default function FederalExperience() {
                 Leveraging a combined 15+ years of expertise in government
                 contracting
               </h2>
-              <p className="text-red-50 text-lg">
+              <p className="text-blue-50 text-lg">
                 Our leadership team is driven by excellence and strives to
                 exceed expectations in every endeavor.
               </p>
@@ -114,14 +114,16 @@ export default function FederalExperience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-4 bg-white/10 dark:bg-gray-900/30 rounded-xl p-4 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-gray-900/40 transition-all duration-300 border border-white/10"
+                  className="flex items-start gap-4 bg-white/10 dark:bg-gray-900/30 rounded-xl p-4 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-violet-900/20 transition-all duration-300 border border-white/10"
                 >
-                  <feature.icon className="w-6 h-6 flex-shrink-0 mt-1 text-red-100" />
+                  <feature.icon className="w-6 h-6 flex-shrink-0 mt-1 text-blue-100" />
                   <div>
                     <h3 className="font-semibold mb-1 text-white">
                       {feature.title}
                     </h3>
-                    <p className="text-red-50 text-sm">{feature.description}</p>
+                    <p className="text-blue-50 text-sm">
+                      {feature.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -137,7 +139,7 @@ export default function FederalExperience() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-white border-b border-red-200/20 pb-2">
+              <h3 className="text-2xl font-bold mb-6 text-white border-b border-violet-200/20 pb-2">
                 NAICS CODES
               </h3>
               <div className="grid gap-4">
@@ -148,7 +150,7 @@ export default function FederalExperience() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="p-4 bg-white/10 dark:bg-gray-900/30 rounded-lg backdrop-blur-sm hover:bg-white/20 dark:hover:bg-gray-900/40 transition-all duration-300 border border-white/10"
+                    className="p-4 bg-white/10 dark:bg-gray-900/30 rounded-lg backdrop-blur-sm hover:bg-blue-300/20 dark:hover:bg-violet-700/30 transition-all duration-300 border border-white/10"
                   >
                     <div className="flex flex-col">
                       <div className="flex items-center mb-2">
@@ -156,7 +158,7 @@ export default function FederalExperience() {
                           {item.code}
                         </span>
                       </div>
-                      <p className="text-red-50 text-sm">{item.description}</p>
+                      <p className="text-blue-50 text-sm">{item.description}</p>
                     </div>
                   </motion.div>
                 ))}

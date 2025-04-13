@@ -92,7 +92,7 @@ export default function WhyTatariy() {
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10"></div>
               <img
-                src="/why.png"
+                src="/team.png"
                 alt="TATARIY Impact"
                 className="w-full h-full object-cover"
               />

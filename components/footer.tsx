@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Facebook,
@@ -8,20 +10,27 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Newsletter from "./newsletter";
+import { useTheme } from "next-themes";
 
 export default function Footer() {
+  const { resolvedTheme } = useTheme();
+
   return (
     <footer className="bg-gray-100 dark:bg-gray-800 py-12">
       <div className="container mx-auto px-4 max-w-9xl">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-          <div className="col-span-2 pr-2">
+        <div className="text-sm grid grid-cols-1 md:grid-cols-6 gap-8">
+          <div className="col-span-1 sm:col-span-2 pr-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/hero/logo.png"
+                src={
+                  resolvedTheme === "dark"
+                    ? "/hero/logo-white.png"
+                    : "/hero/logo.png"
+                } // Use different logos
                 alt="TATARIY logo"
                 width={150}
                 height={75}
-                className="dark:invert"
+                className=""
               />
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
@@ -187,7 +196,7 @@ export default function Footer() {
                   href="/news/blog"
                   className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
                 >
-                  BLog
+                  Blog
                 </Link>
               </li>
             </ul>

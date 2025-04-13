@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
 
 export default function WhoWeAre() {
   return (
@@ -14,9 +13,12 @@ export default function WhoWeAre() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl font-bold text-gray-700 dark:text-white ">
             WHO WE ARE
           </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300  leading-relaxed">
+            We are DOERS!
+          </p>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
         </motion.div>
 
@@ -29,9 +31,12 @@ export default function WhoWeAre() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white ">
                 DOERS BY DESIGN
               </h3>
+              <p className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                TATARIY means DOER — and that&apos;s who we are.
+              </p>
               <p className="text-xl text-gray-700 dark:text-gray-300 font-medium">
                 We&apos;re problem-solvers, builders, and strategic doers who
                 deliver measurable impact.
@@ -45,7 +50,6 @@ export default function WhoWeAre() {
             </p>
 
             <div className="flex items-start space-x-3">
-              <MapPin className="text-blue-600 mt-1 flex-shrink-0" />
               <p className="text-lg text-gray-700 dark:text-gray-300">
                 Headquartered in Lake Ridge, Virginia, we serve federal and
                 state agencies with a sharp focus on Information Technology,
@@ -53,10 +57,6 @@ export default function WhoWeAre() {
                 Professional Services.
               </p>
             </div>
-
-            <p className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-              TATARIY means DOER — and that&apos;s who we are.
-            </p>
           </motion.div>
 
           <motion.div
