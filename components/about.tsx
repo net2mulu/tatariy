@@ -59,11 +59,16 @@ export default function About() {
                 Experience & Expertise
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                With over 15 years of experience supporting defense, civilian,
-                and SLED, missions, we bring a sharp focus and tactical know-how
-                to every engagement. Our teams blend innovation and discipline -
-                delivering high-impact solutions that meet mission needs and
-                exceed expectations.
+                At TATARIY, we lead with experience you can trust and deliver
+                with the expertise you need. With over 15 years in federal
+                contracting, we bring deep, cross-sector experience supporting
+                defense, civilian, and SLED missions. Our strength lies in
+                delivering end-to-end IT solutions-from enterprise program
+                management to cybersecurity, cloud migration, and systems
+                integration. We pair that with high-impact talent acquisition
+                and people-first training programs to ensure long-term success.
+                Every engagement is grounded in operational excellence, mission
+                alignment, and a commitment to getting the job done right.
               </p>
             </div>
 
@@ -72,10 +77,15 @@ export default function About() {
                 Track Record
               </h3>
               <p className="text-gray-700 dark:text-gray-300">
-                From supporting Foreign Military Sales programs for the Air
-                Force to enhancing cyber readiness at the Department of State,
-                our past performance reflects our commitment to precision,
-                speed, and measurable success
+                Our past performance reflects a consistent ability to deliver
+                with precision, speed, and impact. From leading talent
+                acquisition efforts for Foreign Military Sales programs across
+                four Air Force bases to supporting cybersecurity initiatives at
+                the Department of State, TATARIY has earned trust across
+                critical missions. Our experience also includes work under the
+                ITATSS program with RNEC-NCR, where we contributed to RMF
+                cybersecurity, VolP services, and C4IM operations demonstrating
+                our ability to meet high-security, high-performance standards.
               </p>
             </div>
           </motion.div>

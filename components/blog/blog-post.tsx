@@ -4,13 +4,25 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Share2, Twitter, Facebook, Linkedin } from "lucide-react";
+import { ReactNode } from "react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Post {
   title: string;
   date: string;
   author: string;
   image?: string;
-  content: { type: string; text: string }[];
+  content: {
+    url?: string | StaticImport;
+    caption?: ReactNode;
+    href?: string | undefined;
+    level?: number;
+    items?: string[];
+    alt?: string;
+    src?: string;
+    type: string;
+    text?: string;
+  }[];
 }
 
 export function BlogPost({ post }: { post: Post }) {
@@ -66,17 +78,98 @@ export function BlogPost({ post }: { post: Post }) {
               className="prose prose-lg dark:prose-invert max-w-none"
             >
               {post.content.map((block, index) => {
-                if (block.type === "paragraph") {
-                  return (
-                    <p
-                      key={index}
-                      className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed"
-                    >
-                      {block.text}
-                    </p>
-                  );
+                switch (block.type) {
+                  case "paragraph":
+                    return (
+                      <p
+                        key={index}
+                        className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed"
+                      >
+                        {block.text}
+                      </p>
+                    );
+                  case "heading2":
+                    return (
+                      <h2
+                        key={index}
+                        className="text-2xl font-semibold text-gray-800 dark:text-white mt-8 mb-4"
+                      >
+                        {block.text}
+                      </h2>
+                    );
+                  case "heading3":
+                    return (
+                      <h3
+                        key={index}
+                        className="text-xl font-semibold text-gray-800 dark:text-white mt-6 mb-3"
+                      >
+                        {block.text}
+                      </h3>
+                    );
+                  case "quote":
+                    return (
+                      <blockquote
+                        key={index}
+                        className="border-l-4 border-blue-400 pl-4 italic text-gray-600 dark:text-gray-400 my-6"
+                      >
+                        {block.text}
+                      </blockquote>
+                    );
+                  case "list":
+                    return (
+                      <ul
+                        key={index}
+                        className="list-disc list-inside mb-6 text-gray-700 dark:text-gray-300"
+                      >
+                        {block.items?.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    );
+                  case "ordered-list":
+                    return (
+                      <ol
+                        key={index}
+                        className="list-decimal list-inside mb-6 text-gray-700 dark:text-gray-300"
+                      >
+                        {block.items?.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ol>
+                    );
+                  case "image":
+                    return (
+                      <div key={index} className="my-6">
+                        <Image
+                          src={block.src || "/placeholder.svg"}
+                          alt={block.alt || "Blog Image"}
+                          width={800}
+                          height={400}
+                          className="rounded-lg"
+                        />
+                        {block.caption && (
+                          <p className="text-center text-sm text-gray-500 mt-2">
+                            {block.caption}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  case "link":
+                    return (
+                      <p key={index} className="mb-6">
+                        <a
+                          href={block.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:underline dark:text-blue-400"
+                        >
+                          {block.text}
+                        </a>
+                      </p>
+                    );
+                  default:
+                    return null;
                 }
-                return null;
               })}
             </motion.div>
 

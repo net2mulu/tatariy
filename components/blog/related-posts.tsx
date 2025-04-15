@@ -8,19 +8,20 @@ import { ArrowRight } from "lucide-react";
 // This is a placeholder for future blog posts
 const relatedPosts = [
   {
-    title: "5 Key Strategies for Small Businesses in Government Contracting",
-    slug: "key-strategies-small-businesses",
-    date: "February 15, 2025",
+    title: "5 Essential Strategies for Small Business Set-Asides",
+    slug: "5-essential-strategies-for-small-business-set-asides",
+    date: "February 24, 2025",
     excerpt:
-      "Discover proven strategies that can help small businesses succeed in the competitive world of government contracting.",
+      "Navigating the world of government contracting can be challenging for small businesses, especially with the competitive nature of federal and state procurement processes. One significant opportunity available to small businesses is set-aside contracts, which are designed to level the playing field by reserving specific contracts exclusively for small businesses.",
     image: "/art1.png",
   },
   {
-    title: "Understanding the Federal Acquisition Regulation (FAR)",
-    slug: "understanding-far",
-    date: "January 22, 2025",
+    title:
+      "Understanding the FAR (Federal Acquisition Regulation) for Cybersecurity Contracts",
+    slug: "understanding-the-far-federal-acquisition-regulation-for-cybersecurity-contracts",
+    date: "October 28, 2024",
     excerpt:
-      "A comprehensive guide to navigating the complex world of Federal Acquisition Regulation for new contractors.",
+      "As cyber threats continue to rise, the federal government places increasing importance on cybersecurity in its contracts. To ensure transparency, fairness, and, most importantly, security, contractors working with federal agencies must adhere to the Federal Acquisition Regulation (FAR).",
     image: "/art2.png",
   },
 ];
