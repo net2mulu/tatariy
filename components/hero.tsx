@@ -107,14 +107,12 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="hover:scale-110"
           >
-            <a
-              href="/statement.pdf"
-              target="_blank"
+            <div
               className="px-6 py-1 text-base font-medium text-blue-600 dark:text-white border dark:border-white border-blue-600 rounded-full select-none"
               rel="noreferrer"
             >
               Government Technology Solutions
-            </a>
+            </div>
           </motion.div>
 
           {/* Tagline */}

@@ -78,7 +78,7 @@ export default function FederalExperience() {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br  from-blue-500 to-violet-800" />
+      <div className="absolute inset-0 bg-gradient-to-br  from-[#021647] to-[#056599]" />
 
       {/* Particles */}
       <div className="absolute inset-0">

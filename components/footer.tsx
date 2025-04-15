@@ -147,7 +147,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/professional-services"
+                  href="/services/professional-services"
                   className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
                 >
                   Professional Services
@@ -223,7 +223,7 @@ export default function Footer() {
 
             <div className="mt-4 md:mt-0">
               <span
-                onClick={() => openModal("terms")}
+                onClick={() => openModal("privacy")}
                 className="text-sm cursor-pointer text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 mr-4"
               >
                 Privacy Policy
