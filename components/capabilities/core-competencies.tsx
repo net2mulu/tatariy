@@ -62,7 +62,33 @@ export default function CoreCompetencies() {
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-red-500/10 dark:from-blue-500/5 dark:to-red-500/5 rounded-3xl" />
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
-            {competencies.map((competency, index) => (
+            {competencies.slice(0, 3).map((competency, index) => (
+              <motion.div
+                key={competency.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`bg-white  dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300`}
+              >
+                <div className={`flex items-start gap-4`}>
+                  <div className="p-3 bg-gradient-to-br from-blue-100 to-red-100 dark:from-blue-900/30 dark:to-red-900/30 rounded-lg">
+                    <competency.icon className="w-6 h-6 text-gray-900 dark:text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                      {competency.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {competency.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="relative grid grid-cols-1 md:grid-cols-2  gap-8 p-8">
+            {competencies.slice(3, 5).map((competency, index) => (
               <motion.div
                 key={competency.title}
                 initial={{ opacity: 0, y: 20 }}

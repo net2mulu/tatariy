@@ -48,8 +48,8 @@ export const pressData: PressRelease[] = [
         ],
         contact: {
             name: "Rahwa Haile",
-            title: "CEO & Founder",
-            email: "press@tatariy.com",
+            title: "Founder & President",
+            email: "founders@tatariy.com",
             phone: "(202) 250-4252",
         },
     },
@@ -81,8 +81,8 @@ export const pressData: PressRelease[] = [
         ],
         contact: {
             name: "Rahwa Haile",
-            title: "CEO & Founder",
-            email: "press@tatariy.com",
+            title: "Founder & President",
+            email: "founders@tatariy.com",
             phone: "(202) 250-4252",
         },
     },
@@ -114,8 +114,8 @@ export const pressData: PressRelease[] = [
         ],
         contact: {
             name: "Rahwa Haile",
-            title: "CEO & Founder",
-            email: "press@tatariy.com",
+            title: "Founder & President",
+            email: "founders@tatariy.com",
             phone: "(202) 250-4252",
         },
     },
@@ -145,8 +145,8 @@ export const pressData: PressRelease[] = [
         ],
         contact: {
             name: "Rahwa Haile",
-            title: "CEO & Founder",
-            email: "press@tatariy.com",
+            title: "Founder & President",
+            email: "founders@tatariy.com",
             phone: "(202) 250-4252",
         },
     },

@@ -7,32 +7,35 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Enterprise IT Solutions",
+    title: "Information Technology",
+    image: "/services/it.jpg",
+    slug: "/services/information-technology",
     description:
-      "Transform Your Agency's Infrastructure. Comprehensive Solutions for Modern Government. From Cloud Migration to System Integration.",
-    image: "/1.jpeg",
-    slug: "enterprise-it-solutions",
+      "Comprehensive IT solutions and digital transformation services.",
   },
   {
     title: "Program Management",
-    description:
-      "Strategic Excellence in Project Delivery. Expert Guidance from Initiation to Completion. Ensuring Project Success at Every Step.",
-    image: "/2.jpeg",
-    slug: "program-management",
+    image: "/services/pm.jpg",
+    slug: "/services/program-management",
+    description: "Expert program and project management services.",
   },
   {
-    title: "Cybersecurity Services",
-    description:
-      "Protect Your Agency's Digital Assets. Advanced Threat Detection and Prevention. Comprehensive Security Solutions.",
-    image: "/3.jpeg",
-    slug: "cybersecurity-services",
+    title: "Professional Services",
+    image: "/services/ps.jpg",
+    slug: "/services/professional-services",
+    description: "Specialized consulting and professional services.",
   },
   {
-    title: "Digital Transformation",
-    description:
-      "Modernize Your Government Services. Citizen-Centric Digital Solutions. Streamlined Processes for Better Service Delivery.",
-    image: "/4.jpeg",
-    slug: "digital-transformation",
+    title: "Talent Acquisition",
+    image: "/services/ta.jpg",
+    slug: "/services/talent-acquisition",
+    description: "Strategic recruitment and staffing solutions.",
+  },
+  {
+    title: "Training",
+    image: "/services/tr.jpg",
+    slug: "/services/training",
+    description: "Comprehensive training and development programs.",
   },
 ];
 
@@ -52,13 +55,13 @@ const ServiceCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="group relative flex flex-col md:flex-row items-start gap-6 p-6 rounded-3xl bg-white border border-gray-200 dark:border-none dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
+    className="group relative flex flex-col md:flex-row items-start gap-6 p-6 rounded-3xl bg-white border border-gray-200 dark:border-none dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 max-w-400 backdrop-blur-sm"
   >
-    <div className="w-full md:w-40 h-40 rounded-2xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-700">
+    <div className="w-full md:w-52 h-40 rounded-2xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-700">
       <Image
         src={image}
         alt={title}
-        width={400}
+        width={500}
         height={400}
         className="w-full h-full object-cover"
       />
@@ -100,11 +103,24 @@ export default function Services() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-600 mx-auto" />
         </motion.div>
+        <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {services.slice(0, 2).map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {services.slice(2, 4).map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1  gap-6">
+            {services.slice(4, 5).map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

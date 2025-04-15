@@ -27,7 +27,7 @@ export function NewsletterSignup() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-6">Stay Updated with TATARIY</h2>
+          <h2 className="text-3xl font-bold mb-6">Stay Updated With TATARIY</h2>
           <p className="text-lg mb-8 text-white/90">
             Subscribe to our newsletter for the latest insights, tips, and
             opportunities in government contracting.

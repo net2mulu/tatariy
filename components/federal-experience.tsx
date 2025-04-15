@@ -4,24 +4,16 @@ import { motion } from "framer-motion";
 import { Shield, Clock, Users, CheckCircle, Building } from "lucide-react";
 import FederalExperienceParticles from "./federal-experience-particles";
 
-// Enhanced NAICS codes with descriptions
+// Enhanced NAICS codes with descriptions - grouped by type with IT services first
 const naicsCodes = [
-  {
-    code: "541611",
-    description:
-      "Administrative Management and General Management Consulting Services",
-  },
-  {
-    code: "541618",
-    description: "Other Management Consulting Services",
-  },
+  // IT Services Group
   {
     code: "541511",
     description: "Custom Computer Programming Services",
   },
   {
     code: "541512",
-    description: "Computer Systems Design Services",
+    description: "Computer System Design Services",
   },
   {
     code: "541513",
@@ -32,12 +24,49 @@ const naicsCodes = [
     description: "Other Computer Related Services",
   },
   {
-    code: "561311",
-    description: "Employment Placement Agencies",
+    code: "518210",
+    description:
+      "Computing Infrastructure Providers, Web Hosting and Related Services",
+  },
+  {
+    code: "541715",
+    description:
+      "Research and Development in the Physical, Engineering, and Life Sciences",
+  },
+  {
+    code: "541990",
+    description: "All Other Professional, Scientific and Technical Services",
+  },
+
+  // Management and Professional Services Group
+  {
+    code: "541611",
+    description:
+      "Administrative Management and General Management Consulting Services",
+  },
+  {
+    code: "541618",
+    description: "Other Management Consulting Services",
   },
   {
     code: "611430",
     description: "Professional and Management Development Training",
+  },
+  {
+    code: "561311",
+    description: "Employment Placement Agencies",
+  },
+  {
+    code: "561320",
+    description: "Temporary Help Services",
+  },
+  {
+    code: "561110",
+    description: "Office Administrative Services",
+  },
+  {
+    code: "541930",
+    description: "Translation and Interpretation Services",
   },
 ];
 
@@ -142,7 +171,7 @@ export default function FederalExperience() {
               <h3 className="text-2xl font-bold mb-6 text-white border-b border-violet-200/20 pb-2">
                 NAICS CODES
               </h3>
-              <div className="grid gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {naicsCodes.map((item, index) => (
                   <motion.div
                     key={index}
@@ -150,7 +179,7 @@ export default function FederalExperience() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="p-4 bg-white/10 dark:bg-gray-900/30 rounded-lg backdrop-blur-sm hover:bg-blue-300/20 dark:hover:bg-violet-700/30 transition-all duration-300 border border-white/10"
+                    className="p-4 bg-white/10 dark:bg-gray-900/30 rounded-lg backdrop-blur-sm hover:bg-blue-300/20 dark:hover:bg-[#021647]/50 hover:scale-105 transition-all duration-300 border border-white/10"
                   >
                     <div className="flex flex-col">
                       <div className="flex items-center mb-2">

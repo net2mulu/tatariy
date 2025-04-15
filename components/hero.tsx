@@ -202,7 +202,7 @@ export default function Hero() {
               { number: "Trusted", text: "By Civilian & Defense Agencies" },
               {
                 number: "Certified",
-                text: "EDWSOB/WOSB, MWAA-SLBA, DBE, SWaM, SBE",
+                text: "EDWOSB/WOSB, MWAA-SLBE, DBE, SWaM, SBE, WBE",
               },
               { number: "100%", text: "Past Performance Success" },
             ].map((item, index) => (

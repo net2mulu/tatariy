@@ -5,16 +5,16 @@ import { Building2, Globe2, Users } from "lucide-react";
 
 const companyInfo = [
   {
+    label: "UEI",
+    value: "HQ1ZLRCN9QZ1",
+  },
+  {
     label: "CAGE",
     value: "95HF3",
   },
   {
     label: "DUNS",
     value: "071939012",
-  },
-  {
-    label: "UEI",
-    value: "HQ1ZLRCN9QZ1",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function CompanyProfile() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}

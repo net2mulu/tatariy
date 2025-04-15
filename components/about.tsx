@@ -16,7 +16,7 @@ export default function About() {
           className="text-center mb-4"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Who we are
+            Who We Are
           </h2>
           <span className="text-red-600 dark:text-red-400 font-medium mb-2 text-lg block">
             Doers by Design
@@ -33,7 +33,7 @@ export default function About() {
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-6 text-center">
-              <p className="text-md sm:text-xl text-start sm:text-justify md:text-2xl font-medium text-gray-900 dark:text-white leading-relaxed">
+              <p className="text-lg text-justify text-gray-700 dark:text-gray-300 mb-8">
                 TATARIY is a purpose-driven government contracting firm built to
                 deliver what matters: results, trust, and transformative impact.
                 Headquartered in Lake Ridge, Virginia, we partner with federal,
@@ -41,8 +41,8 @@ export default function About() {
                 Information Technology, Program Management, Talent Acquisition,
                 Training, and Professional Services.
               </p>
-              <p className="text-lg text-blue-500 font-normal">
-                TATARIY means DOER - and that&apos;s who we are.
+              <p className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                TATARIY means DOER — and that&apos;s who we are.
               </p>
             </div>
           </motion.div>
@@ -85,7 +85,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-3xl mx-auto text-center mt-8"
+            className="max-w-4xl mx-auto text-center mt-8"
           >
             <p className="text-lg text-justify text-gray-700 dark:text-gray-300 mb-8">
               At TATARIY, we don&apos;t just show up - we solve. We lead with

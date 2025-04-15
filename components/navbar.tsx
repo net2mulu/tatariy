@@ -263,7 +263,7 @@ const MobileDropdown = ({
         className={cn(
           "flex items-center justify-between w-full",
           isCapabilitiesRoute
-            ? "text-white hover:text-gray-200"
+            ? "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
             : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white",
           isDropdownActive && "text-red-600 dark:text-red-400 font-semibold"
         )}
@@ -288,7 +288,7 @@ const MobileDropdown = ({
                 className={cn(
                   "block py-2 text-sm",
                   isCapabilitiesRoute
-                    ? "text-white hover:text-gray-200"
+                    ? "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                     : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white",
                   isSubItemActive &&
                     "text-red-600 dark:text-red-400 font-semibold"

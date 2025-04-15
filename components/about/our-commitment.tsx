@@ -41,7 +41,7 @@ export default function OurCommitment() {
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
               <img
-                src="/commit.png"
+                src="/commit.jpeg"
                 alt="TATARIY Team Collaboration"
                 className="w-full h-full object-cover"
               />
