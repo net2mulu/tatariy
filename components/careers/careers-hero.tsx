@@ -19,19 +19,16 @@ export default function CareersHero() {
               Careers at TATARIY
             </h1>
             <span className="text-xs md:text-sm font-bold text-gray-600 dark:text-white">
-              Built by Doers. Driven by Purpose.
+              Doers Wanted. Purpose Delivered.
             </span>
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            At TATARIY, talent isn&apos;t an alterthought - its our foundation.
-            As a company that delivers Talent Acquisition as a core service we
-            know how to recognize potential and match it with purpose
-            That&apos;s exactly now we crow our own team.
+            Talent is TATARIY&apos;s foundation. We excel in Talent Acquisition,
+            matching potential with purpose to grow our team.
           </p>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            We&apos;re looking for people who take action, lead with integrity.
-            and are committed to delivering results that matter if that&apos;s
-            you. let&apos;s build something great together.
+            Join us if you act decisively, lead with integrity, and deliver
+            results that matter. Let&apos;s build greatness together.
           </p>
           <Link
             href="#job-openings"
