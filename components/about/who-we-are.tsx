@@ -68,7 +68,7 @@ export default function WhoWeAre() {
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
               <img
-                src="/wwa.png"
+                src="/who.jpeg"
                 alt="TATARIY Team at Work"
                 className="w-full h-full object-cover"
               />

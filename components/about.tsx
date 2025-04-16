@@ -33,7 +33,7 @@ export default function About() {
             className="max-w-4xl mx-auto"
           >
             <div className="space-y-6 text-center">
-              <p className="text-lg text-justify text-gray-700 dark:text-gray-300 mb-8">
+              <p className="text-lg text-left tracking-tight md:text-justify text-gray-700 dark:text-gray-300 mb-8">
                 TATARIY is a purpose-driven government contracting firm built to
                 deliver what matters: results, trust, and transformative impact.
                 Headquartered in Lake Ridge, Virginia, we partner with federal,
@@ -58,7 +58,7 @@ export default function About() {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 Experience & Expertise
               </h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700  dark:text-gray-300">
                 At TATARIY, we lead with experience you can trust and deliver
                 with the expertise you need. With over 15 years in federal
                 contracting, we bring deep, cross-sector experience supporting
@@ -97,7 +97,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-4xl mx-auto text-center mt-8"
           >
-            <p className="text-lg text-justify text-gray-700 dark:text-gray-300 mb-8">
+            <p className="text-lg text-justify tracking-tight md:text-justify text-gray-700 dark:text-gray-300 mb-8">
               At TATARIY, we don&apos;t just show up - we solve. We lead with
               heart, build with brains, and deliver with integrity. Whether
               we&apos;re supporting a prime on a high-stakes initiative or
