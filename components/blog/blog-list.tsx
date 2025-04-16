@@ -14,7 +14,7 @@ const blogPosts = [
     author: "TATARIY",
     excerpt:
       "At TATARIY, we've seen it too often in government contracting: businesses—especially emerging ones like us—stall out, overanalyzing bids, fearing rejection, or waiting for the \"perfect\" solicitation. We're here to flip that.",
-    image: "/dyna.png",
+    image: "/debut.jpeg",
   },
   // More blog posts can be added here in the future
 ];

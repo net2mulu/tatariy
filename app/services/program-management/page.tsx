@@ -5,7 +5,7 @@ export default function ProgramManagementPage() {
     <ServiceLayout
       title="Program Management"
       description="Navigate challenges and achieve success in today's dynamic landscape. Our PMP, ITIL and CSM certified team provides expert guidance that span an entire project lifecycle. Our comprehensive program management services ensure your projects meet their full potential, from planning to execution."
-      imageSrc="/program.jpeg"
+      imageSrc="/prog.jpeg"
       imageAlt="Program management Services Illustration"
       caseStudy={{
         title: "C4IM Program Support Across DoD Agencies ITA-ITSS",
