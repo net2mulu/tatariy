@@ -1,5 +1,5 @@
 import CareersHero from "@/components/careers/careers-hero";
-import JobOpenings from "@/components/careers/job-openings";
+import { JobOpenings } from "@/components/careers/job-openings";
 
 export default function CareersPage() {
   return (

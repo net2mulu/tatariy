@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ApplicationForm } from "./application-form";
 
 const jobs = [
   {
@@ -39,7 +40,15 @@ const jobs = [
   },
 ];
 
-export default function JobOpenings() {
+export function JobOpenings() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<string>("");
+
+  const handleApply = (jobTitle: string) => {
+    setSelectedJob(jobTitle);
+    setIsFormOpen(true);
+  };
+
   return (
     <section id="job-openings" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -86,18 +95,25 @@ export default function JobOpenings() {
                     {job.description}
                   </p>
                 </div>
-                <Link
-                  href={`/careers/${job.slug}`}
+                <button
+                  onClick={() => handleApply(job.title)}
                   className="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
                 >
                   Apply Now
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Application Form Modal */}
+      <ApplicationForm
+        isOpen={isFormOpen}
+        onClose={() => setIsFormOpen(false)}
+        jobTitle={selectedJob}
+      />
     </section>
   );
 }

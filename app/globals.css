@@ -12,3 +12,41 @@
   --background: black;
   --foreground: white;
 }
+
+/* Case study content styling */
+.case-study-content ul {
+  @apply list-disc pl-6 space-y-2 my-4;
+}
+
+.case-study-content ol {
+  @apply list-decimal pl-6 space-y-2 my-4;
+}
+
+.case-study-content li {
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+.case-study-content p {
+  @apply mb-4 last:mb-0;
+}
+
+.case-study-content li:last-child {
+  @apply mb-0;
+}
+
+.case-study-content ul:last-child,
+.case-study-content ol:last-child {
+  @apply mb-0;
+}
+
+.case-study-content h4 {
+  @apply text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-4;
+}
+
+.case-study-content a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.case-study-content strong {
+  @apply font-semibold text-gray-800 dark:text-gray-200;
+}

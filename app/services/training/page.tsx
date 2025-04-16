@@ -8,15 +8,50 @@ export default function TrainingPage() {
       imageSrc="/training.jpeg"
       imageAlt="Talent Acquisition Services Illustration"
       caseStudy={{
-        title: "TRAINING DEVELOPMENT FOR FEDERAL AVIATION ADMINISTRATION (FAA)",
+        title: "Workforce Development Training: From Dreamers to Go-Getters",
         overview:
-          "Project Level Agreements (PLAs) within the Federal Aviation Administration (FAA) define and document work agreements between two offices, serving as programmatic oversight for projects typically lasting 12-18 months. Given the lifecycle of PLAs, from project scoping to project closeout, a complex Standard Operating Procedure (SOP) must be consistently executed across various projects and portfolios. The leadership team at TATARIY played a pivotal role in developing standardized training to ensure the successful execution of these PLAs, thereby enhancing efficiency and consistency across the FAA's operations.",
-        approach:
-          "The team conducted a thorough review of existing SOPs to gain a comprehensive understanding of all stakeholders within the FAA and their roles and responsibilities. This detailed analysis allowed the team to define clear parameters and meticulously examine each aspect of the project lifecycle. The goal was to create a detailed, step-by-step guideline that would serve as the foundation for a robust and standardized training program. This approach ensured that all processes were well-documented and that every stakeholder understood their part in the successful execution of the PLAs.",
-        solution:
-          "Using the SOPs as the foundation, the team designed a comprehensive training document for new hires supporting the FAA. This training guide covered organizational details, step-by-step activities required to facilitate, execute, and track projects, platform demonstrations, and reporting timelines. It also provided stakeholder details, templates to ensure uniformity in documentation, and hands-on exercises to reinforce learning. The training material was crafted to be clear, concise, and practical, ensuring that new hires could quickly grasp and apply the necessary procedures.",
-        results:
-          "The training guide has been in use since 2023 Fiscal Year, with a 100% utilization rate, indicating its effectiveness and acceptance. It has significantly expedited the onboarding process, enabling new hires to be trained more efficiently and reducing the time required for them to move from the shadowing phase to full productivity. This acceleration in training has led to quicker project handoffs and improved overall execution of PLAs. The standardized training has also ensured consistency across various projects, enhancing performance and satisfaction among FAA stakeholders. This success story underscores the expertise and leadership now present at TATARIY, showcasing their capability to deliver impactful training and development solutions in complex federal environments.",
+          'TATARIY delivers transformative workforce development training that equips emerging leaders with the tools to turn ambition into action. As leaders of Dream In Colors Media, our team infuses our programs with a mission to inspire "Dreamers to Become Go-Getters," paired with TATARIY\'s commitment to delivering "Expertise You Need." Through partnerships with the African Union, Rotary Club, and local nonprofits, TATARIY has trained approximately 80 participants across targeted programs, fostering practical skills and career pathways. Our MWAA-SLBE, DBE, EDWOSB, SWaM, MBE, and SBE certifications position us as a trusted partner for federal, enterprise, and community training initiatives.',
+        approach: `
+          <p>TATARIY's training programs combine rigorous, federal-grade methodologies with culturally relevant engagement to drive measurable outcomes:</p>
+          <ul>
+            <li>Customized Curriculum: We design content with experts from government, technology, and entrepreneurship, ensuring relevance across industries.</li>
+            <li>Expert Facilitation: With 15+ years in government contracting and program management, leads sessions that blend strategic insight with mentorship.</li>
+            <li>Interactive Delivery: Workshops feature live Q&As, hands-on exercises, and open dialogue to maximize engagement and practical application.</li>
+            <li>Action-Oriented Outcomes: Each participant receives a personalized action plan to translate learning into immediate next steps.</li>
+          </ul>
+          
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">Programs Delivered</h4>
+          
+          <p><strong>1. African Union Youth Career Forum</strong></p>
+          <p>TATARIY collaborated with the African Union to deliver a training series, engaging youth professionals in government, technology, and creative fields.</p>
+          <ul>
+            <li>Addressed career navigation, bridging the "what now?" gap for aspiring leaders.</li>
+            <li>Facilitated open discussions, resulting in actionable career plans for attendees.</li>
+            <li>Achieved high engagement, with participants reporting increased clarity on career paths.</li>
+          </ul>
+          
+          <p><strong>2. Rotary Club Workforce Readiness Workshop</strong></p>
+          <p>TATARIY delivered a focused workshop for approximately 40 participants, partnered with a local Rotary Club, emphasizing career mapping, entrepreneurship, and goal-setting.</p>
+          <ul>
+            <li>Provided personalized action plans and resources for immediate application.</li>
+            <li>Concluded with an interactive Q&A and mentorship connections to sustain impact.</li>
+            <li>Earned strong feedback for delivering practical tools and boosting confidence.</li>
+          </ul>
+        `,
+        solution: ``,
+        results: `
+          <ul>
+            <li>~80 Participants Trained across two targeted sessions, empowering youth and emerging leaders to pursue purpose-driven careers.</li>
+            <li>High Impact: Over 80% of participants developed personalized career or business plans, with several pursuing new ventures or professional roles.</li>
+            <li>Trusted Partnerships: Collaborations with the African Union, Rotary Club, and local nonprofits demonstrate reliability and community trust.</li>
+            <li>Community Engagement: Post-training mentorship and resource-sharing, inspired by Dream In Colors Media's ethos, extended program benefits.</li>
+            <li>Client Feedback: "TATARIY's training provided our participants with clear, actionable steps to succeed." – Rotary Club Partner.</li>
+          </ul>
+          
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">Why TATARIY?</h4>
+          <p>With MWAA-SLBE, DBE, EDWOSB, SWaM, MBE, and SBE certifications, TATARIY delivers proven training expertise to federal agencies, enterprises, and community organizations. Our programs empower workforces with skills and confidence to excel, rooted in over a decade of government contracting experience.</p>
+          <p>Ready to elevate your training programs? Contact us at <a href="mailto:rahwa.haile@tatariy.com" class="text-blue-600 dark:text-blue-400 hover:underline">rahwa.haile@tatariy.com</a> or visit our <a href="/contact" class="text-blue-600 dark:text-blue-400 hover:underline">Contact Page</a> to discuss partnership opportunities.</p>
+        `,
       }}
     />
   );
