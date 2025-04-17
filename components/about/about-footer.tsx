@@ -20,7 +20,7 @@ export function FounderBioFooter() {
               <div className="relative rounded-xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-700 aspect-square max-w-xs mx-auto">
                 <Image
                   src="/rahwa.jpg"
-                  alt="Rahwa Haile - Founder and CEO of TATARIY LLC"
+                  alt="Rahwa Haile - Founder and President of TATARIY LLC"
                   fill
                   className="object-cover"
                   priority
@@ -37,7 +37,7 @@ export function FounderBioFooter() {
                 target="_blank"
                 className="text-blue-600 dark:text-blue-400 font-medium mb-4"
               >
-                Founder & CEO
+                Founder & President
               </Link>
               <div className="prose prose-lg dark:prose-invert">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">

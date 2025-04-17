@@ -62,7 +62,7 @@ export default function Footer() {
               </a>
               <a
                 target="_blank"
-                href="https://x.com/tatariygov?S=11&t=vnRTkx4YiwOg8OY_aQ7-VA"
+                href="https://x.com/tatariyllc?s=21&t=vnRTkx4YiwOg8OY_aQ7-VA"
                 className="text-gray-400 hover:text-blue-500"
               >
                 <Twitter size={20} />

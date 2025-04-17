@@ -85,7 +85,12 @@ export function BlogPost({ post }: { post: Post }) {
                         key={index}
                         className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed"
                       >
-                        {block.text}
+                        <div
+                          className="text-gray-600 dark:text-gray-300 space-y-4 case-study-content"
+                          dangerouslySetInnerHTML={{
+                            __html: block.text || "",
+                          }}
+                        />
                       </p>
                     );
                   case "heading2":

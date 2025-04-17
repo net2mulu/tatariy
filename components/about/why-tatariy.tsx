@@ -46,7 +46,7 @@ export default function WhyTatariy() {
             <div className="space-y-4">
               <p className="text-xl text-gray-700 dark:text-gray-300 italic">
                 We don&apos;t chase opportunities — we create them. We
-                don&apos;t just show potential — we fulfill it.;
+                don&apos;t just show potential — we fulfill it.
               </p>
             </div>
 

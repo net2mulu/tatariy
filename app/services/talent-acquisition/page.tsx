@@ -5,7 +5,7 @@ export default function TalentAcquisitionPage() {
     <ServiceLayout
       title="Talent Acquisition"
       description="We understand that your greatest asset is your people, and our Talent Acquisition Services are designed to help you find and retain top talent. With a comprehensive approach to talent acquisition, we specialize in recruiting and placing applicants for a wide range of positions from executive-level professionals to temporary staff."
-      imageSrc="/talent.jpeg"
+      imageSrc="/tal.jpeg"
       imageAlt="Talent Acquisition Services Illustration"
       caseStudy={{
         title:

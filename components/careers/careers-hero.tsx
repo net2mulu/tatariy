@@ -18,9 +18,6 @@ export default function CareersHero() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
               Careers at TATARIY
             </h1>
-            <span className="text-xs md:text-sm font-bold text-gray-600 dark:text-white">
-              Doers Wanted. Purpose Delivered.
-            </span>
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Talent is TATARIY&apos;s foundation. We excel in Talent Acquisition,

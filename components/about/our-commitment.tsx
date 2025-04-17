@@ -8,7 +8,7 @@ export default function OurCommitment() {
     "We listen before we build.",
     "We align before we act.",
     "We do the work others won't touch.",
-    "And when technology shifts the game — we're already one move ahead.",
+    "And when technology shifts the game — we're already one step ahead.",
   ];
 
   return (

@@ -43,7 +43,7 @@ export default function FromCrawlingToConqueringPage() {
       },
       {
         type: "paragraph",
-        text: "Start today with TATARIY. The only thing you'll regret is waiting. Ready to bid bold? We're @TATARIYLLC on X—tell us your first step.",
+        text: `Start today with TATARIY. The only thing you'll regret is waiting. Ready to bid bold? We're <a href="https://x.com/tatariyllc?s=21&t=vnRTkx4YiwOg8OY_aQ7-VA">@TATARIYLLC</a> on X—tell us your first step.`,
       },
     ],
   };

@@ -59,8 +59,8 @@ export function JobOpenings() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-red-600 dark:text-red-400 font-medium mb-2 block">
-            Opportunities
+          <span className="text-xs md:text-sm font-bold text-red-500 ">
+            Doers Wanted. Purpose Delivered.
           </span>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Current Openings

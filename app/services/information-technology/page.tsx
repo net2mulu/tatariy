@@ -5,7 +5,7 @@ export default function InformationTechnologyPage() {
     <ServiceLayout
       title="Information Technology"
       description="Experience seamless integration and comprehensive support with our experienced IT team. Whether you're looking to develop customized software, integrate complex systems, or manage your IT infrastructure, our team provides tailored solutions to optimize efficiency and drive innovation."
-      imageSrc="/it.jpeg"
+      imageSrc="/itg.jpeg"
       imageAlt="Financial trading screens showing data and graphs"
       caseStudy={{
         title:

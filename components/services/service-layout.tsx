@@ -47,7 +47,7 @@ export default function ServiceLayout({
                 {description}
               </p>
             </div>
-            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-xl">
+            <div className="relative h-64 md:h-[400px] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src={imageSrc || "/placeholder.svg"}
                 alt={imageAlt}
@@ -81,7 +81,7 @@ export default function ServiceLayout({
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <span className="text-red-600 dark:text-red-400 font-medium mb-2 block">
+              <span className="text-red-600 dark:text-red-400 font-medium mb-2 text-3xl block">
                 Case Study
               </span>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -90,7 +90,7 @@ export default function ServiceLayout({
               <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-600 mx-auto" />
             </motion.div>
 
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="grid gap-8">
                 {/* Overview Card */}
                 {caseStudy.overview && (
@@ -105,7 +105,10 @@ export default function ServiceLayout({
                       Overview
                     </h3>
                     <div className="text-gray-600 dark:text-gray-300 space-y-4">
-                      <p>{caseStudy.overview}</p>
+                      <div
+                        className="text-gray-600 dark:text-gray-300 space-y-4 case-study-content"
+                        dangerouslySetInnerHTML={{ __html: caseStudy.overview }}
+                      />
                     </div>
                   </motion.div>
                 )}

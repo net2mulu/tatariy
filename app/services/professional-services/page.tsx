@@ -5,19 +5,48 @@ export default function ProfessionalServicesPage() {
     <ServiceLayout
       title="Professional Services"
       description="We offer specialized support in strategic planning, financial management, process improvement, stakeholder engagement, and compliance and risk management. We develop and implement strategies aligned with government initiatives, manage projects to ensure timely and on-budget delivery, provide robust financial oversight, enhance operational efficiency, and facilitate stakeholder communication. Our team ensures adherence to regulations and mitigates risks, helping your agency achieve its mission with confidence and precision."
-      imageSrc="/pro.jpeg"
+      imageSrc="/talent.jpeg"
       imageAlt="Program management Services Illustration"
       caseStudy={{
         title:
           "THE DEPARTMENT OF STATE DIPLOMATIC SECURITY PROJECT MANAGEMENT & ENGINEERING OFFICE (PME)",
-        overview:
-          "The Diplomatic Security Project Management & Engineering Office (PME) required a coordinated and analytical approach to address critical security challenges at Diplomatic Missions, including Terrorism, Espionage, Civil Unrest, and Cyber Threats. The current leadership team at TATARIY led this effort, providing comprehensive program analysis and strategic planning to enhance security measures at these missions.",
-        approach:
-          "The approach adopted by the team was systematic and data-driven. The initial focus was on identifying and assessing risks by understanding the specific threats and vulnerabilities faced by each diplomatic mission. Coordinating security efforts ensured seamless collaboration between various technical and operational teams CONUS and OCONUS. Maintaining strict schedules and budgets was crucial to completing security projects on time and within financial constraints. Throughout the project, data-driven decision making guided the development and implementation of effective security strategies.",
-        solution:
-          "To address the security needs of diplomatic missions, the team implemented several advanced solutions. Comprehensive data collection and analysis were conducted using state-of-the-art analytical tools to identify gaps and areas for improvement in current security measures. Strategic plans with clear objectives and performance metrics were developed to guide and measure the success of PME initiatives. Robust communication channels were established among various teams and stakeholders to ensure alignment and address any issues promptly. Cutting-edge security technologies and protocols were deployed to significantly enhance the overall safety of diplomatic missions.",
-        results:
-          "The meticulous program management led to significant improvements in the security of diplomatic missions. Comprehensive risk assessments and mitigation plans effectively reduced the likelihood and impact of security incidents. Efficient project management ensured all security projects were completed on time, minimizing disruptions to diplomatic operations. Accurate cost estimates and budget management kept projects within financial constraints, optimizing the use of resources. Continuous improvement was achieved through data-driven analysis, ensuring that diplomatic missions remained secure in a dynamic threat environment. The team's approach significantly enhanced diplomatic security, demonstrating the expertise and leadership now present at TATARIY.",
+        overview: `
+          <p>TATARIY’s leadership team has a proven track record managing complex professional services portfolios across multiple federal agencies, including:</p>
+          <ol>
+            <li> DoD – Department of Defense</li>
+            <li> DTRA – Defense Threat Reduction Agency</li>
+            <li> USMC – United States Marine Corps</li>
+            <li> DHS – Department of Homeland Security</li>
+            <li> DEA – Drug Enforcement Administration</li>
+            <li> DOL – Department of Labor</li>
+            <li> NIH – National Institutes of Health</li>
+            <li> NASA – National Aeronautics and Space Administration</li>
+            <li> DOC – Department of Commerce</li>
+            <li> DOS – Department of State</li>
+            <li> USAID – U.S. Agency for International Development </li>
+          </ol>
+          <p>From workforce management to strategic reporting and operational oversight, the team has consistently delivered mission-aligned results under high-stakes conditions—ensuring quality, compliance, and stakeholder satisfaction.</p>
+        `,
+        approach: `<p>TATARIY’s approach combines structure with agility. For one portfolio alone, the team:</p>
+          <li>Led a diverse mix of technical and operational professionals across on-site and remote engagements</li>
+          <li>Maintained daily alignment with business line directors to synchronize project scope, timelines, and budgets</li>
+          <li>Embedded clear communications frameworks for reporting, decision-making, and issue escalation</li>
+          <li>Fostered a culture of accountability, motivation, and continuous improvement among all stakeholders</li>
+        `,
+        solution: `<p>To support federal agency success, TATARIY deployed:</p>
+          <li>End-to-end project management across full life cycles—from feasibility assessments and staffing to execution and closeout</li>
+          <li>Customized performance tracking tools for real-time visibility into milestones, risks, and deliverables</li>
+          <li>Technical recruiting and cultural fit assessments to staff highly specialized roles with speed and precision</li>
+          <li>Streamlined SOPs and workflow optimization, driving consistency across contracts and reducing onboarding time</li>
+          <li>Quality assurance frameworks aligned with ISO and CMMI standards to ensure regulatory compliance and service excellence</li>
+          <li>Executive-ready reporting dashboards to support leadership decisions, audits, and funding justifications</li>
+        `,
+        results: `<p>Seamless execution of multi-agency professional services contracts, often under accelerated timelines and evolving requirements</li>
+          <li>On-time delivery of multiple concurrent initiatives, each meeting or exceeding contractual performance metrics</li>
+          <li>Documented and institutionalized process improvements, boosting operational efficiency and knowledge transfer across future projects</li>
+          <li>Strengthened reputation as a go-to teaming partner for large primes and a trusted delivery arm for federal agencies</li>
+          <li>Positioned TATARIY as a nimble, high-performing small business capable of scaling solutions without compromising quality</li>
+        `,
       }}
     />
   );
