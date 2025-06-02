@@ -18,7 +18,7 @@ export function NewsletterSignup() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-600 to-red-600 text-white">
+    <section className="py-16  bg-gradient-to-br  from-[#021647] to-[#056599] text-white">
       <div className="container mx-auto px-4 max-w-9xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

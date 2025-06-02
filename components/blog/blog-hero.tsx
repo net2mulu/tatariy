@@ -16,7 +16,7 @@ export function BlogHero() {
             TATARIY Blog
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            Welcome to TATARIYs Blog—where we ignite action in government
+            Welcome to our blog, where we ignite action in government
             contracting. Start here, win big.
           </p>
         </motion.div>

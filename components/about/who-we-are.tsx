@@ -37,9 +37,9 @@ export default function WhoWeAre() {
               <p className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4">
                 TATARIY means DOER — and that&apos;s who we are.
               </p>
-              <p className="text-xl text-gray-700 dark:text-gray-300 font-medium">
-                We&apos;re problem-solvers, builders, and strategic doers who
-                deliver measurable impact.
+              <p className="text-xl text-gray-700 dark:text-gray-300">
+                We&apos;re problem-solvers, builders, and strategic doers by
+                design, delivering measurable impact.
               </p>
             </div>
 

@@ -109,7 +109,7 @@ export const pressData: PressRelease[] = [
             },
             {
                 label: "Download Our Capabilities Statement",
-                url: "/capabilities-statement.pdf",
+                url: "/statement.pdf",
             },
         ],
         contact: {
